@@ -1,0 +1,2016 @@
+owncloud_issue_id,owncloud_issue_text,owncloud_issue_body,owncloud_create_time,distance,nextcloud_review_id,nextcloud_review_text,nextcloud_create_time,bug 1,bug 2,Ô­150Ìõ,,,
+331948068,direcly show login screen on saml expiration,fixes https://github.com/owncloud/android/issues/2238#issuecomment-396660454,2018/6/13 11:09,0.8953,gp:AOqpTOFIWatBP0xjF7EWFkjobuexLwmCFZxh_65ZOxW3H2gCptadyQOf0TCoD8hz4krvPVMpvDMya3xbtDQDEDc,Stuck in a login loop. This issue has been on their GitHub (#3623) for 2 years and remains unfixed.,2022/3/5 16:37,,,,,,
+13337686,Downloaded shared files stay on device if share is removed,"### Expected behaviour
+
+If a share (not the files) is removed, downloaded files within this share should not be visible in app and this files should get removed from device.
+### Actual behaviour
+
+Files do not show in android app but remain on device.
+### Steps to reproduce
+1. Create a share for an account
+2. Download some files within
+3. Remove share
+4. View downloaded files in file manager
+### Environment data
+
+Android version: 4.1.2
+
+Device model: Samsung Galaxy S2
+
+Stock or customized system: Stock
+
+ownCloud app version: 1.3.20
+
+ownCloud server version: 4.5.7
+",2013/4/18 7:49,0.8996,gp:AOqpTOFLbrnQJRB3GBiGidPDVoCOLmLVvm_8ds1WzOLD7S5F1Qz-9DiFPrSwBMK6MpIpON8CjAWfJBJqzL2n_VI,"BUG: when using the share menu to upload multiple file to Nextcloud, the app uploads only one file, and forgets to upload the rest of the selections.",2022/3/4 21:19,https://github.com/nextcloud/android/issues/9964,https://github.com/nextcloud/android/issues/9965,,,,
+34716380,[1.5.6] client ==> server updates do not work any more: a text file updated on my android is now never synchronized,"I have a small text on my Android (which I often update with Jota Editor), and which is flagged as ""to be synchronized"" with its server version.
+
+However this automatic update mechanism (client ==> server) does not work any more in the 1.5.6 version.
+
+What has been changed?
+",2014/5/31 22:16,0.9188,gp:AOqpTOG0y2L9IQiVHaTw3yQZRCYRM5xllv6UYKc4HVRC9yukJrwnpzMgEa7dcJ-j6C6vvSd_nBzLBDdJ3W0lFJY,"Lots of issues if you reinstall client+ server. Files no longer sync properly. Some folders only sync on wifi although setup to always sync. Too bad, I wanted to replace onedrive",2022/2/14 23:03,https://github.com/nextcloud/android/issues/9966,,,,,
+85587398,External Storage Errors Passed from Server to Mobile (Android),"As an ownCloud administrator, I would like a mechanism to pass external storage credential errors to the mobile clients so that users on their devices can address any problems with external storage, and continue to use ownCloud even after an error (in conjunction with: owncloud/core#16306 )
+
+Acceptance Criteria:
+- The error needs to be able to identify a problem with external storage and pass an error that does not cause the client to delete the directory, rather a temporary error that notifies the user that the directory is not syncing
+- All errors are assumed to be temporary network or credential issues, rather than permanent failures
+  - If external storage is permanently affected, the admin will have to remove it (or the user, if it is a personal mount) to resolve the errors
+- The error needs to specifically identify the kind of problem (such as a credentials error), server not found error, etc
+- The error also needs to specify a path so that the error can be addressed by the clients (such as opening a browser to the appropriate URL) and then allowing the user to resolve the issue. The error cannot be assumed to be in the root directory, as external storage can be moved around inside owncloud
+
+iOS Version: https://github.com/owncloud/ios/issues/382
+
+Desktop Version: https://github.com/owncloud/client/issues/3308
+
+LONGER TERM:
+The desktop clients would provide a communications path for passing messages to and from ownCloud clients (such as a credentials error AND a built in login screen) - so a general class of error that can be reused would be a good concept here. Related: owncloud/core#16772
+
+
+____
+
+BUGS & IMPROVEMENTS
+
+- [X] Incorrect error message uploads https://github.com/owncloud/android/issues/1004#issuecomment-278648662 [FIXED]
+- [X] Incorrect error message downloads  https://github.com/owncloud/android/issues/1004#issuecomment-278649569  [FIXED]",2015/6/5 17:28,0.8903,gp:AOqpTOEpQ1nfUF8A9P4Ii1CEeOpfk8fmkGO9zVUpcsUP3VCS0SB-IvrKUda1B1NYcPi3CSxWgxOmin8505BGO2Q,The app crashes when I go to the 'On Device' tab. I suspect there are network calls to the very slow server there in the ui thread.,2022/1/31 7:39,https://github.com/nextcloud/android/issues/9967,,,,,
+169769062,"Auto upload, exif problem","### Actual behaviour
+
+When the app automatically upload a picture after it's been taken, the exif of the image file indicate the date of the upload, not the original date and time of the picture.
+
+If the upload succeed imediately after the photo shoot, there is not big problem. But when the upload fails, the exif of the image indicate the datetime of the retried upload, not the original exif.
+### Expected behaviour
+
+The exif of an uploaded image should always be the original one. Else, it mess up the order and the chronology and it's a problem.
+### Environment data
+
+Android version: up to date.
+
+Device model: One Plus One
+
+Stock or customized system: Cyanogen
+
+ownCloud app version: up to date.
+
+ownCloud server version: 9.0.1
+",2016/8/6 22:11,0.9265,gp:AOqpTOFE7JP8qwK9dCCs-xezZx7MnuQPTtRmq8ODtQ021YBVk7lJme29N_HtX-zDXQ1d59ilZN3rh9M3c7kFUtU,Auto upload does not work. It's first function vi wanted to enroll...,2022/1/24 16:48,https://github.com/nextcloud/android/issues/9962,,,,,other posted it in the same time
+50160551,File modification date lost when uploading file,"When uploading a file using the Android app the file creation date is set to the upload date.
+
+Instead, the file creation date of the file from the Android file system should be used.
+
+EDITED by @davivel: the creation date of the file suffers an ancient bug, not sure if fixable; BUT the MODIFICATION DATE of the file should be set with the upload. See https://github.com/owncloud/android/issues/761#issuecomment-115287988
+
+EDITED by @davigonz: 
+
+PR:  https://github.com/owncloud/android/pull/1849
+PR android library: https://github.com/owncloud/android-library/pull/140",2014/11/26 12:07,0.8938,gp:AOqpTOGNKedm0ZGeGkygdb9c_AzRZpjx1MQZqdiEsw4WylYDEloWq_2Pq7t-Ddsj4lfVnTzepIRuoKoc0lCLz8o,Frequently crashes. Conflicting file dialogue fails to display every time. Folders I've requested for upload never get uploaded. Waste of time.,2022/1/24 15:55,,,,,,
+43808834,"Changing the password causes no more refreshes and failing photo sync, which only re-install will fix","I just changed the password of my ownCloud account.
+
+After that, on my android device, I tried changing the password for the ownCloud account. That seemed to be easy enough, and my new password was accepted without problems. After that, however, the ownCloud android client was constantly complaining about a ""failed synchronisation"" for the instant upload images. Also when navigating inside the owncloud app, even though some folder content was shown, it seemed to be outdated, as of most folders the subfolders (especially those I had never loaded before) were empty, and the spinner on the top never stopped turning (even for the folders where some content was shown).
+
+Is there any log to check for the case when such problems happen?
+
+I tried setting the password multiple times, I'm sure it was the correct one, it never worked
+
+I then tried removing the account and recreating it, which also didn't change anything.
+
+Next I tried ""force stopping"" the app and removing all its data, which also didn't help.
+
+At last, I tried uninstalling and reinstalling the client (and the JellyBean workaround app, which still seems to be required on 4.4, correct?), and after recreating the account then, it finally worked again.
+
+Anybody else seen this? Any log or so I can check for details as to why the simple password change procedure didn't work in my case?
+
+Note: I didn't specifically check the version before reinstalling, but since automatic upgrades are enabled, I suppose it was the version 1.5.8 of the app before and after re-installation.
+
+I'm currently trying a second password change to see if this behavior is reproducible in my environment. Edit: Not reproducible at the moment. So I'm closing this issue. Maybe it will be a guidance for others having a similar experience...
+",2014/9/24 20:06,0.9142,gp:AOqpTOFRP8aZdKgwAv8qFGXXwZPtzPh7HEP40P-aOC--Gz_SHpbih8lIKdBZL9jDJW7FY2nI8YUNrbq5AtR4B2Y,The app is really useful but there is no option to disable the sync with the phone from the files we upload. I had to delete them manually each time.,2022/1/8 13:28,,,,,,
+1158320846,"[FEATURE REQUEST] Open deeplinks in app, items in root folder (1st round)","Private links generated by the server, must be opened inside the oC Android app.
+
+This is a first approach with specific ACs:
+
+- App matching the host to be opened when private link is clicked. Not needed to brand this. Static.
+- Working in only one account mode
+- If the link points to a file, the file will be downloaded/displayed
+- If the link points to a folder, the folder content will be displayed
+- If a locking method is set up, the file/folder will be displayed after unlocking
+- If device does not have connection but the file is already downloaded, file is displayed
+- If device does not have connection but the folder is already discovered, content is displayed
+- If the file/folder is not reachable, app is opened and error is shown (toast/snackbar/...)
+- If no accounts are attached in the app, app is opened and error is shown (toast/snackbar/...) (feasible?)
+
+Additional checks:
+
+- Lack of URL in the scheme (or *) are valid as well.
+
+### TASKS
+
+- [ ] Research (if needed)
+- [ ] Create branch feature/feature_name
+- [ ] Development tasks
+  - [ ] Implement whatever
+  - [ ] ...
+- [ ] Code review and apply changes requested
+- [ ] Design test plan
+- [ ] QA
+- [ ] Merge branch feature/feature_name into master
+
+### PR
+
+- App
+- Library (if needed)
+",2022/3/3 11:56,0.8927,gp:AOqpTOE6s5AqwuqtmkriviaoNX_aMMbBTFFBgV_MNQ1zg_m02D7BTUXsib8qYWQb6WpgOEYfPV6pLldjN78U-B0,I have had a quite good experience so far with the app for the last months. One disappointment is the auto update feature. I am unable to sync my GeniusScan folder because it requires permission to access the deep folder (android/data) and i dont know how to give that permission to Nextcloud app. Will have to burn 14$ on GeniusScan Plus to sync with server.,2021/12/24 17:42,,,,,,
+49869679,[Feedback mail] As an Android user I want to send more information on the attachment mail so that support know in advanced the App and the version,"AC:
+- As an Android user I want to send  more information on the feedback attachment mail. Currently, it is only send: ""Feedback"", now I want it to be:  ""Feedback - android vX.X.X"" where x.x.x is the number of the installed version
+",2014/11/24 9:24,0.9163,gp:AOqpTOEFrYlQfCnYhUq3LLmKe45wL4QnlkuphRNHG9-28NVhc1j5fwJbZ-yuUa-AL3b1ef3zuyqU_XV8r3eDKu0,"It's been over a week with the message on my app on a Android device: ""Server Not Available"". When I can use Nextcloud on my laptop. There is no support to contact and you csnt edit your own account.",2021/12/7 14:09,,,,,,
+9506819,Option to make files/folders public,"It would be cool to make certain files or directories publicly accessibly from within the app and copy the URL to the clipboard.
+This would enable/simplify sharing files (pictures etc.) in your Owncloud with friends.
+",2012/12/25 2:12,0.89,gp:AOqpTOHNjwYzqlzFxe7eikpu6AQccJg2kftIwK_mPPBosZWh6HZZRsNQ2NdtMLGdyJBLe57i8FFFFZ7CmonzW9Q,"When I share multiple files from file explorer, for example 5, it only uploads 2 or 1 of them.",2021/12/6 15:19,,,,,,
+123514311,Automatic upload works only sometime,"What I'm doing :
+-Check automatic picture upload
+-Check only wifi
+
+What is happening :
+-Nothing most of the time
+-If I'm on wifi + owncloud in the background + I take a picture : It uploads it
+
+What I'm expecting to happen :
+-Should upload all the pictures that has been taken when I didn't had wifi
+-The app shouldn't have to be launched to upload pictures
+
+ Some suggestion :
+-Maybe a way to disable the owncloud notification / icon on each upload.
+-Are the weird kind of ""loading"" dots on the top of the app made on purpose ? They look weird.
+-Users should be able to chose the folder name for auto upload, if you have more than one device it is a mess.
+
+Thanks for reading :)
+",2015/12/22 16:35,0.9298,gp:AOqpTOHHFT6avpY5taGI0_nKSGRRvdpTQyUueO_peEA80fli8ae7LiI5OI_7lINSE9rn_uzIxFTeIm4Orf-fySA,"Automatic upload is unpredictable, sometimes it work and sometimes it doesn__.",2021/11/18 4:53,,,,,,
+7991808,Files like File_conflict_TIMESTAMP.txt  when editing files on the Android device (Jota Text Editor),"While testing the behaviour of down- and uploads with a single file File.txt for editing, I now noticed a spooky file File_conflict_20121030_084503.txt on the Android. 
+
+I use
+- server 4.5.1a
+- Android 1.3.14
+- Jota Text Editor (Android) with enabled setting to use abackup version when editing. This editor creates a backup file with filename File.txt~ . 
+
+Perhaps this backup file (renaming, swapping names of current and backup version ???) is causing the reported issue. In previous tests I disabled the backup file creation in the Jota Text Editor settings and everything (editing on the server, editing in Windows client and editing on the Android device) appeared to work fine, at least I did not notice problems when synchronising the Android client manually - for this see https://github.com/bartoszprzybylski/owncloud-android/issues/43 )
+
+The Delete button however only offers to the delete this particular file on the server(!).
+
+The Windows client does not show such a file in the file list.
+
+Questions:
+- Please can you explain why the Android client offers ""delete on the server"" ?
+- Should the text become ""delete locally"" because there is no File_conflict_TIMESTAMP.txt on the server but a conflicting backup file File.txt~ locally ? [UPDATE] I think I was wrong. The file is indeed on the server.
+- This exact local file name (File.txt~) should be listed locally in the Android client, or File.txt~___conflict_TIMESTAMP [UPDATE]
+  I think I was wrong. The file is indeed on the server.
+",2012/10/31 7:58,0.912,gp:AOqpTOFFLylCF-LJGsSnmeTfdACPWTgCSrnTsZ2peVT4VzcSALl5lpleIOdgdq7xLZbux2D2X2nQogE1rM6g41I,"Downloading files to local filesystem is very inconvenient. The ""download"" button caches files somewhere in ./Android/data/whatever, and then you have to use a third party file manager to copy those files to Documents/Downloads/etc... folder.",2021/10/19 0:03,,,,,,
+19627895,instant upload: remember failed uploads and retry later,"If I have a weak network connection it happens quite often that my mobile phone loses the connection during an instant upload. The app informs me that the upload failed but it is quite hard to find out which files are uploaded and which not when I'm back on my desktop.
+
+It would be a great improvement if the Android app would remember which instant uploads failed and try to upload them again later. Maybe after a given timespan or simply if a new instant upload gets triggered because the user took a new photo.
+",2013/9/17 17:12,0.9263,gp:AOqpTOH0QKlrAeAGyJIoKhaaWGo7bHO5f5MCwb7M2qkxha9wbOJ-e1o6pJnzezaEjQK5_Yugl2z5hWnkcpxb_uA,"I haven't really had any issues with the app itself. Occasionlly it will fail to auto upload a pic, but it will retry on its own and usually succeed.",2021/10/13 9:03,,,,,,
+29248713,Check server certificates in SAML SSO webview and allow the user trust or not in case of problems,,2014/3/12 9:40,0.9121,gp:AOqpTOHK0bMCdS1Ye5V8btgJMmKRXZ0injxQN3DaSRx70tGs4XgHAHMfpcxyleVH5Q69gl-5l-eT4LQg5DOPyec,not able connect to my nextcloud servers and complained connect error or server too long to respond where as browsers connects fine without issue,2021/10/2 6:46,,,,,,
+457958741,Fix crash when notifying upload result,Implements #2560 ,2019/6/19 11:30,0.9106,gp:AOqpTOEjTU3PUlKLHCyN1XkKfAfE8p5WiC638dyHWBOaqAVbnaAvrM85Le3Vy-98U2kusaRam-3iWETtuRgiW4s,Mostly works as intended. Managing the auto upload feature can be problematic since it causes the app the crash alot of the time.,2021/10/2 2:51,,,,,,
+8168516,"Android client recognizes epub files as directories, can't download/open them","Steps to reproduce:
+- Download valid .epub file to ownCloud directory on GNU/Linux 
+- Wait for client to sync to ownCloud (tested on 4.5.1 server default install, 1.1.1 client)
+- Open OwnCloud Android client (tested 1.3.12)
+- The .epub file then appears as a folder clickking on it ""opens"" an empty folder
+
+Other files similarly sync'ed (ODT, PDF) open fine after downloading.
+",2012/11/7 12:30,0.8971,gp:AOqpTOFblDBazkrVo1QaMGQgiyx9hMjxsgcvwXEU0ncSKjQJzpVt9T5veJLE_Tm9doxZTecMJmAiaJ2j9A0O9HA,Unlike the desktop version doesn't sync upload files created on Android when moved to local nextcloud folder,2021/9/8 9:39,,,,,,
+452514711,[BUG] [New Arch] Small glitch when editing folder permissions in public links,"### Steps to reproduce
+1. Create a public link over a folder, and set a password
+2. Edit the public link, and change the permission
+
+
+### Current behaviour
+The password textview disappears
+
+![Jun-05-2019 15-51-08](https://user-images.githubusercontent.com/14894746/58961703-00da3000-87aa-11e9-8f7f-682d36befb72.gif)
+
+
+### Expected behaviour
+The password textview does not disappear
+
+Android 9
+
+### PRs
+- App: https://github.com/owncloud/android/pull/2606",2019/6/5 13:53,0.8915,gp:AOqpTOGhXZZ1IcEfcqnJIWNs393eqy7mzKtbTw5iDgLFlOz-Hq89YxCaullTweWtWMxYDUg3Sb2H4usyrpDH5Pg,Auto upload is glitch. Cannot detect files on folder even after saving newly it don't work. Always have to uninstall and install to make it work detect existing files. This is not what cloud means!,2021/9/6 17:28,,,,,,
+40256695,Don't instantly save a second copy of an image to instantUpload on the phone,"After recently getting the ownCloud app on Android and enabling instant photo upload, I noticed that after taking a picture the app is automatically saving a copy of the picture in the owncloud folder on the phones memory, even though I haven't gone to view/download the photo in the app. 
+Since I take a lot of photos this is just wasting space on the phone. Its also not likely I'm going to use the ownCloud app to view the photo if I can view it from the Android photo app anyway, so there isn't really any reason for them to be there. It would be nice to have the option to disable this if not have it removed as it probably doesn't make sense for a lot of people to do this.
+",2014/8/14 14:01,0.8994,gp:AOqpTOGLbA5QCmFSajHvoXsqg6qDTjE6FqCx4-ajMUSax6oUJYYRYYtyUsfOzGCQQNRKePg9QLqTgYqnkjHOkSU,"Automatic sync appears to be not very reliable, photo uploading very slow with lots of false ""upload failed"" and ""upload conflicts""notifications.",2021/8/22 12:10,,,,,,
+36382803,app crashes after log in if the server version is < 4.5,"Hi guys,
+
+I have set up my own owncloud when I go to log in using the app. i can put my server name user name and password click log in it logs me in starts to load then crashes. I do currently not have any files on the server.  
+
+I do only have server version 4.04 and am trying to connect with adrioid app version 1.5.7. Would that even matter?
+",2014/6/24 13:22,0.8903,gp:AOqpTOHxLlbgPY3DENQuuP8l3UT9V8DvxyOcE5WnpQQdQqFcU2pum4JScd_wXS1qAYkheIPCctfuVzaTc3ye7pk,open source my own cloud great app and server needs work,2021/7/15 19:51,,,,,,
+20324711,Fix fails in uploads after fall and rise of network connection,,2013/10/1 11:12,0.9115,gp:AOqpTOF56R701oEJ-nw0Oelzp3Wvkf4bposHIrif0rB9LVVkYj4uArnU-58laqbxW_fhh_8K66hLB7tC2y4zv-c,"Good app, error messages could be improved. Instant upload still temperamental with a TLSv1.3 only server.",2021/7/9 14:12,,,,,,
+27428548,"Delete already synced folder from server, still exists on client","### Steps to reproduce
+1. Web: login to ownCloud server
+2. Web: Create a folder ""to delete"" on the server
+3. Web: Create a text file ""test.txt"" inside and write some contents in it
+4. Android Client: Refresh the account to trigger sync
+5. Android Client: navigate into ""to delete"" and download the ""test.txt""
+6. Android File Manager: navigate to the account's folder, see that ""to delete"" exists
+7. Web: Delete folder ""to delete""
+8. Android Client: refresh the account and see that ""to delete"" disappeared from the ownCloud app
+9. Android File Manager: Using a file manager, navigate to the account's folder
+### Expected result
+
+""to delete"" folder is gone from the mobile device's filesystem
+### Actual result
+
+""to delete"" folder still exists and so does ""test.txt"".
+If that file was huge it would waste the mobile device's space without the user knowing.
+### Versions
+
+Android app: 1.5.3
+OC server: 6.0.1
+File Manager: Ghost Commander
+",2014/2/12 12:06,0.8916,gp:AOqpTOGND_Y0MscsuU5BZwK-0lzrMDLP1lgSMN7G9js18MDaMJGyed-a1jk6u3AeVUGchcXNkXnR9TeZlximKkY,Work well with my server. Any issues I had with uploading large files were resolved by correct configuration in my reverse proxy.,2021/6/19 19:25,,,,,,
+42624273,Develop version: Cannot create new connection to server,"I just re-installed the app.
+
+After entering the URL it said:
+""Cannot authenticate against this server""
+but did not ask for a password.
+
+I tracked the problem here:
+
+line 257 in AuthentivatorActivity.java:
+boolean samlWebSsoSupported = AUTH_ON.equals(getString(R.string.auth_method_saml_web_sso));
+returns true
+
+When setting it to false, it works alright.
+",2014/9/12 12:33,0.8952,gp:AOqpTOFf27-Cf1l7ZumxtuXuCNo4uEBMRexTcV_QMZmHDs6A81ptHhsvNIrtj7AUr0Bv71PpDDkfkOPxgfUFVj4,This version doesn't allow uploads from Android if server is using TLS 1.3 exclusively; need 1.2 in addition to 1.3. otherwise connection error. Works fine on desktop.,2021/6/6 15:32,,,,,,
+23182678,Error message when uploading files to OC 6.0,"OC Version: 6.0 beta5
+Android App Version: 1.5.0
+Android Version: 4.0.3
+
+When uploading a file via my Android Phone I get an error message that the upload was unsuccessul. Checking via the webfronend the file was upload successfully though!
+
+Looking through the log file while uploading the file, I noticed the following entries, which might be related
+
+{""app"":""PHP"",""message"":""Undefined variable: output at \/www\/htdocs\/w00d7ed1\/owncloud6\/lib\/private\/preview\/movies.php#12"",""level"":2,""time"":""2013-11-23T06:14:07+00:00""}
+{""app"":""PHP"",""message"":""Undefined variable: returnCode at \/www\/htdocs\/w00d7ed1\/owncloud6\/lib\/private\/preview\/movies.php#12"",""level"":2,""time"":""2013-11-23T06:14:07+00:00""}
+{""app"":""PHP"",""message"":""RecursiveDirectoryIterator::__construct(\/www\/htdocs\/w00d7ed1\/owncloud6\/data\/test\/thumbnails\/113\/) [<a href='recursivedirectoryiterator.--construct'>recursivedirectoryiterator.--construct<\/a>]: failed to open dir: No such file or directory at \/www\/htdocs\/w00d7ed1\/owncloud6\/lib\/private\/files\/storage\/local.php#44"",""level"":3,""time"":""2013-11-23T06:14:12+00:00""}
+
+I don't get such an error message on my Android Phone when uploading to OC 5
+",2013/11/23 6:18,0.9188,gp:AOqpTOGTR_VeVeKJEXtYHwFD0mSxyhXpJXOtx_RZmq9GgxEQ8_hAJdZVL50xwWSEusnKjhStQgsop1bzDN5a8yo,"Can't solve file conflicts, doesn't respond to user input when uploading.",2021/6/5 18:22,,,,,,
+10191111,Cannot download a folder in Android client,"Using the Android client 1.3.18 I am trying to download a folder that was synced from my desktop to the oC server. I have to open the folder and then long tap each file within the folder and choose download.
+
+Is there no way to download the complete folder in it's entirety?
+",2013/1/22 13:03,0.9013,gp:AOqpTOGO_eOhjc8FBT4xBqLiQY01BLTm9DGaVqjBDFvjszcWVDNfxwA86HuGkf9ngg-iRIT0iExw8PIGFCCcV80,"It's ok, but give possibility to manually choose download folder on device, you can't access files from Android directory.",2021/6/1 8:51,,,,,,
+108810652,As an OC user I want to SHARE VIA LINK with password protection and expiration time using the new interface so that I can secure my shared files,"AC:
+- New interface -> https://github.com/owncloud/ios/issues/425
+- Keep the current options of Share link (apps to share and unshare)
+- The interface should be updated with the server data
+- Possibilities of enable/disable password protection.
+- Possibilities of enable/disable and change the expiration time
+
+NOTE:
+This is related to: https://github.com/owncloud/ios/issues/425
+This is the first step to be able to share with users since we are developing the new view
+",2015/9/29 7:30,0.9079,gp:AOqpTOGEr9977xTSN0cKPucA5YkJoJpuKMxybSi9vHKq0zHNNgIKRgIIqLTeDGJyH7Z2a_fQSIwI3fyZceBcVJw,Doesn't save the server address or even login. The server address not being saved add an extra useless step to the login procedure. I would rather have the server/login saved and use biometric to unlock the app.,2021/5/18 10:13,,,,,,
+127242572,"Bad wording ""delete account"" in Android app (scares user)","In the settings you__l have to long press the username and then chose __elete account_ to remove a local account from the app. This is kind of a bad wording. It does remove the account from the ownCloud app but for the user this is just a __ogout_ on this device, so that he has to type in the username/password again the next time he starts the app. This doesn't really delete the account on the server side. (which is good)
+
+Please consider to rename this action to ""logout"" because __elete account_ sound pretty destructive.
+
+cc @rperezb @jancborchardt @MTRichards @michaelstingl 
+
+00004565
+",2016/1/18 14:53,0.8906,gp:AOqpTOFQ7ftaxJB_xkyo0j-K_jUXbPw1OGD-X4u8rRMuzZe4lQf9qm8piGTyX3YowRIL2VpoHNAju-8DtuiiI3I,"Stupid app. When I try to sign up, ""Error: Something happened."" Don't download.",2021/5/10 14:53,,,,,,
+786333148,Android app : unable to connect to my server,"When I'm trying to login to my owncloud server (https://cloud.vadhe.net) from the official owncloud android app, I get a strange error message : ""the device is not connected"" with a small wifi icon with an interogation mark. To be specific, I'm using the french version, and the message is ""l'appareil n'est connectÃ© _ aucun rÃ©seau""
+
+When entering the server url, secured connection seems ok.
+
+I'm using the unofficial android app ocloud for years. I wanted to switch only because I have issues with upload ""large"" files (like, greater than 3Mo...)
+
+Likewise, I'm using windows client apps without issues.
+
+The server logs are surprisingly small when trying to connect with the app :
+
+`cloud.vadhe.net:443 192.168.0.254 - - [14/Jan/2021:21:50:13 +0100] ""GET /status.php HTTP/1.1"" 200 1340 ""-"" ""Mozilla/5.0 (Android) ownCloud-android/2.15.3""
+cloud.vadhe.net:443 192.168.0.254 - - [14/Jan/2021:21:50:13 +0100] ""PROPFIND /remote.php/dav/files/ HTTP/1.1"" 401 1276 ""-"" ""Mozilla/5.0 (Android) ownCloud-android/2.15.3""
+cloud.vadhe.net:443 192.168.0.254 - Vinny [14/Jan/2021:21:50:19 +0100] ""PROPFIND /remote.php/dav/files/ HTTP/1.1"" 207 1916 ""-"" ""Mozilla/5.0 (Android) ownCloud-android/2.15.3""
+cloud.vadhe.net:443 192.168.0.254 - - [14/Jan/2021:21:50:19 +0100] ""GET /ocs/v2.php/cloud/user?format=json HTTP/1.1"" 403 
+457 ""-"" ""Mozilla/5.0 (Android) ownCloud-android/2.15.3""`
+
+Shouldn't there be a login request, like with a regular browser ?
+`cloud.vadhe.net:443 192.168.0.254 - - [14/Jan/2021:21:54:58 +0100] ""POST /index.php/login HTTP/1.1"" 303 1014 ""-"" ""Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0""
+`
+
+When having this issue earlier tonight, I upgraded the server from 10.2.0 to the latest 10.6.0. Behaviour remains the same.
+
+I tried the demo.owncloud.org server. No problem.",2021/1/14 20:52,0.8987,gp:AOqpTOG9wKJPgGy6fkP3vBt3x19rl_7X1KTUImt6mnJ_sqGmWGv1h78TFBTIo-pvuDLwon7_SfgHlW1pg4Be2PU,"Awesome app, I use it with my personal cloud server and it just works great",2021/5/2 19:16,,,,,,
+15609290,upload files directly from filesystem,"I expect the Android client to behave the same way as the other desktop clients, that is, when I move or copy a file into my Owncloud account directory ( `/storage/sdcard0/Owncloud/account@server/` ) from a file manager, the app should pick that new file and upload it to the server.
+
+The problem is that relying only on using ""share"" actions is that you end up with duplicate files (one in your Owncloud synced files, one in, say, your ""downloads"" directory). Also, as I said, it's inconsistent with other clients and counter intuitive (why does that file display in my sync directory but not in the Owncloud app?)
+",2013/6/16 19:19,0.9173,gp:AOqpTOEKBBvu0ZjKoao_vjH894sm8J719SQgMIJYq5xFYWXepfaNIZpYYRD1aB_gl6NT93qnBahZjU_cNgignr8,Access files on the go. Sometimes some files don't appear in the app.,2021/4/21 13:44,,,,,,
+50046747,Update Description AppStore: Highlight Issue System on Github,"I have read the description of this app in the offical android app store.
+There is only the forum at forum.owncloud.org mentioned.
+
+I think there should be a link to the issue tracker system of GitHub as on Github the developer are reading it. And the text should encourage people to report issues and not just downvote it.
+",2014/11/25 16:05,0.8938,gp:AOqpTOEyXaSus9bXXXYSGTochYUtNOwczrTUzWhGPcVKV-MiCp72_piRnBehl9s1paSiKoxZOqTnYE90dfQAO-s,Next is a fantastic open source product. Only issue with the app is the loading after every user input when trying to browse library.,2021/4/14 9:30,,,,,,
+8061694,Suggestion: Android Client: add a menu point for displaying server certificate information,"I suggest to add a menu point and function in the client to display server certificate information (md5-, sha1- fingerprints, issue- and valid-until dates) like in modern browsers.
+",2012/11/2 15:27,0.8909,gp:AOqpTOEqx42P4pq14xJV7jm8voaVxx-2RFTDCFohz1zKVlbQNR9d1wY8o8l4vHkN89faUntGZfEGzLRzZ0wwXec,Android App does not connect nor accepts a non-default port at the first screen when trying to setup the connection to the server.,2021/3/19 2:14,,,,,,
+109412862,fix #1024 show cert fingerprints when adding new account w/ untrusted certificate,"- show SHA-256, SHA-1 and MD5 certificate fingerprint
+  instead of signature hex dump
+  when certificate is untrusted
+- show error string if one of the digest algorithms is not available
+- added check and error msg for certificate load problems
+
+@AndyScherzinger @davivel pls. can you review my improved PR (I tested the code).
+
+output example for an ""untrusted"" certificate:
+
+<img src=""http://i.imgur.com/lJsCGiU.png"">
+
+output example for ""null"" certificate as suggested by @AndyScherzinger previously in https://github.com/owncloud/android/pull/1134#issuecomment-142615727 :
+
+> Only thing but that is rather an optimization is that if your cert byte-Array is null you can quite passing it on to further methods and return since then you won't be able to print any.
+
+<img src=""https://i.imgur.com/skOGkNb.png"">
+
+(tested by changing the null test temporarily).
+
+Let me know, if you want me to add/change/improve further. I am willing to learn, and to do so.
+",2015/10/2 0:56,0.9046,gp:AOqpTOEnq7S1XCP53cyky9_dNw1GgVKXSjI_KS-nMdF4lgdw1cH_8ieuEwqgtXxd0ezK8yI3vZ3TCCFrY8RPbrE,Mostly good but does this app not trust LetsEncrypt certs? Every time my server's cert renews I need to manually verify and trust the new certificate.,2021/3/14 19:35,,,,,,
+14005914,[Bug] Every picture twice on phone (DCIM and InstantUpload),"Heyho,
+on my phone I now have every picture twice, once in my phone's camera/DCIM folder and once in the InstantUpload folder. This issue could maybe resolved by fixing https://github.com/owncloud/android/pull/116, if also a folder on the phone could be synced. Then I would just point the sync to my camera folder (which would then also fix https://github.com/owncloud/android/pull/149). ;-)
+",2013/5/6 15:24,0.8984,gp:AOqpTOHK-A_gEqmzapUkXKwfuvD_Y28vh8v4IpnnCShujZ55uNt-Jvr90PX5zXue-w6VsVRL6-GeHvwG31BCcbM,"For syncing files there are really better alternatives - foldersync has not let me down even once, nextcloud has many times (not syncing ctime/mtime, photo sync stopping even on iPhone)",2021/3/11 14:33,,,,,,
+184693031,Instant Uploads never started - ANDROID 7,"### Actual behaviour
+
+With Instant Upload turned on, no pictures or videos are automatically uploaded, with or without the ""wifi only"" toggle on.  After reading the related issues, it seems like generally Instant Upload works on Android 7, but some specific phones are having issues.
+### Expected behaviour
+
+Pictures and videos should automatically upload.
+### Steps to reproduce
+1. Enable instant upload in the settings.  Set the appropriate folder for pictures (tried both internal and external SD card).
+2. Take a picture.
+3. The picture is not uploaded - and does not show in the Uploads section.
+
+Can this problem be reproduced with the official owncloud server?
+(url: https://demo.owncloud.org, user: test, password: test)
+Yes
+### Environment data
+
+Android version: 7
+
+Device model: LG v20
+
+Stock or customized system: Stock
+
+ownCloud app version: 2.1.2 (built from master branch on Oct 22).
+
+ownCloud server version: 8.1
+### Logs
+#### Web server error log
+
+No relevant logs found.
+#### ownCloud log (data/owncloud.log)
+
+No logs found.
+",2016/10/23 14:25,0.9018,gp:AOqpTOHw6Cys6NaVXiRUXokKcp_JKTg4dFBSTX4M1LEEF1NbQHSAaWAtWCzy-4i0aKCj4XC376_Y_QkI2YP4AFE,"I've told it to upload over WiFi only, however it decided to do $20 worth of uploads once it was on cell service. Update: Decided to give this app another shot and it did it again. This app seems to get stuck on some uploads and constantly re-uploads them forever.",2021/2/3 22:46,,,,,,
+262324680,custom Two provider app can not login from android application,"### Actual behaviour
+i have created two factor app , from this document  : https://doc.owncloud.org/server/10.0/developer_manual/app/two-factor-provider.html
+on web browser , everything is ok , provider works like a charm , 
+but on Android application , it says "" wrong username or password "" . 
+i read about adding App password , but nothing change , maybe i do wrong , don't know , 
+
+
+### Expected behaviour
+i want to show my provider on android application too . 
+user is coming to login , after checking username and  password , it shows an extra page , to verify authentication . 
+
+
+### Environment data
+Android version: 2.4.0
+
+### Logs
+
+
+#### ownCloud log (data/owncloud.log)
+```
+HTTP\\\/1.1 401 No 'Authorization: Basic' header found. Either the client didn't send one, or the server is misconfigured, No 'Authorization: Basic' header found. Either the client didn't send one, or the server is misconfigured
+
+```
+",2017/10/3 7:03,0.9078,gp:AOqpTOGCih-NM-eaDpg2kHb8PUDkP8qvsIpWSqqnY2dR2BX4r2aRgIKQ6Lf1--5p-b_CekTvcxgdQhbeE6N8mWI,Great app for synching your phone content to your own private cloud!,2021/2/2 21:58,,,,,,
+59464932,Internal music player does not stop playing when file is deleted,"### Steps to reproduce:
+1. Download a sound file 
+2. the internal player starts to play the track
+3. return to file list
+4. player continues to play in the background
+5. delete the file (locally and remote)
+### Expected behaviour
+
+The player should stop.
+### Actual behaviour
+
+Instead the player is still playing and the only possibility to stop it is to kill the owncloud app. At least I could not find another solution.
+### Environment data
+
+owncloud server: 8.0.0.7
+owncloud-app: 1.7.0
+",2015/3/2 10:44,0.8935,gp:AOqpTOGXvGrXl58KYXXp-YiHcNEeFKW3N-zIDU-V7-vsAZ9YVRKxsQOTBEJj6fxUYyavongQaIe3ZWM-TxXTcZo,"Great so far, but the music player is uncontrollable. I hit Stop, but it keeps playing, even if I close the app. I have to force it closed and then it won't play another file unless I reboot the phone.",2021/1/19 2:01,,,,,,
+26616594,Fixed bug in refresh of list of files with shares when device is rotated,,2014/1/30 17:36,0.9199,gp:AOqpTOF14iLxJQra7QyLCozmWOKv-l7k-M9-sZ07JgIUkRCeYg3-msXynYbw34ERx6tXtObDOm7TrHuh8rfTSW0,"the app is a work in progress and is sort of good for automatic backup, but not so great for manual upload - the default behavior without ability to change it permanently is to delete the uploaded file, this often means to download the file again and then move it to part where it was supposed to be. upload conflict dialogs do nothing than asking again and again on the same, already uploaded file",2021/1/14 14:18,,,,,,
+9648218,Instant upload tries and fails when connected to a wireless network without internet connection,"I have Instant Upload enabled for the Android ownCloud client, and have selected ""WiFi only"".  There are a lot of open WiFi networks nearby which require some sort of sign-in. The ownCloud client seems to not pay attention to this fact. As soon as a WiFi network is negotiated on my phone, the ownCloud client tries to upload new photos. It fails because I haven't completed the sign-in process. 
+
+An example of this is Starbucks:  all of their WiFi SSIDs are ""ATT Wifi"" (or something similar). My phone remembers this SSID and happily connects to the network. Before I can actually access the Internet, though, I have to open a browser and click on an ""I agree"" button presented on a splash page.
+
+It would be ideal if the ownCloud client would try to confirm that it can communicate with the ownCloud server in some fashion before trying to upload photos.
+",2013/1/3 16:34,0.9048,gp:AOqpTOEmjSmOsJq8RYax5Jw8JQRhuArDB4KOBNvDsMJMEaTAzoD7L0WwSA15KmrWNZit_g9NpemoT-MqToS5Pa4,I can't conect to a local network server hosted in docker because this app wants ssl only. WHY? Is my private network....f*** off with your ssl encryption.,2021/1/2 12:11,,,,,,
+92406120,Uploader: Gives misleading Â»no content hereÂ« when there__ no offline files in a folder,"1. Use the share action from another app
+2. Go into a folder with files in it, but none of them downloaded
+3. You see Â»Nothing in hereÂ«
+
+Instead, the files should correctly be shown. Otherwise people might think ownCloud deleted their stuff. ;)
+
+@davivel @rperezb 
+",2015/7/1 14:54,0.8914,gp:AOqpTOGxGXdikrJgczDJbxPwfgUq8fpH72g1sHCIvLOP0kwH5Zhb4vVfn6Tvmv0YkVrkruGq6eXJiZN4QXScJ3s,Downloaded photos don't appear in the phone's gallery anymore and uploading files does nothing...They don't appear on the nextcloud folder.,2020/12/15 17:39,,,,,,
+142211419,Beta: using Â»download latest beta versionÂ« link in settings caused the app to crash,"At least for the version 20160124 I wanted to update from it didn__ work. Before I always used the direct download so this is the first time I experienced it.
+
+cc @tobiasKaminsky @AndyScherzinger 
+",2016/3/20 21:56,0.9096,gp:AOqpTOG8e-dEufskdRaa2YS4bukUylYEZgP1vMa6x9gLr5ygSKcp6auPK1xfOiqphWRnG-n_D0pJuJkwWfHwaRo,"App was working well until recently, now it keeps on crashing... and asking to manually check versions of files, all 700 of them... which are my app backups, each week... setting to overwrite old version seems to make the app crash making it unusable for me. In all fairness i was very happy with this app and would gladly rate it 5 stars whe issues are resolved. Problem is resolved with new version",2020/12/14 11:04,,,,,,
+19431398,Purchased app refuses to work without logging in to Amazon App-Shop,"After using Owncloud on my Windows-PC I purchased the Android Owncloud App from the Amazon App Shop. I got it to work without problem. Today when I wanted to use it on my Android Tablet again I got a notice that this app needs that I am logged in to the Amazon-App-Shop to work. ????????? After some time then I get a notice that an internal error has happened. I do not want to login to the Amazon Shop if I do not want to buy anything there. Is this a walware which wants to fish my Amazon login data?
+Franz47
+
+Franz47
+    Newbie
+
+```
+BeitrÃ¤ge: 2
+Registriert: Mo Jul 22, 2013 5:31 pm
+```
+",2013/9/13 5:40,0.8912,gp:AOqpTOFMZzmwTHX1fAHwHx6qvTyjYPV9oi5vYPgCXT2UHsdzSJxYiBNdxIebWbKO8ANjNjcTJ8rJh1VprfyGx3c,Very useful app. Unfortunately Share to nextcloud (Upload) does not work on Google Pixel 4a (Android 11). Already reinstalled the app... Normal Upload works...,2020/12/11 7:29,,,,,,
+19877828,Instant upload broken in 1.4.5 - Samsung Galaxy Note 2 (nordic version),"Hi,
+
+Installed the updated ownCloud-app and the automatic upload of images is broken. It worked fine with 1.4.4. I have both tried to reinstall the app and the workaround-app multiple times and also tried rebooting the phone. Had similar problem when I upgraded to 1.4.4, but that time the problem was the login..
+
+Is there a way for me to extract some kind of logs from the app?
+### Expected behaviour
+
+Automatic upload of pictures taken with the camera.
+### Actual behaviour
+
+No upload of images. I have to manually select the images from my gallery app or from inside of the ownCloud-app..
+### Environment data
+
+Android version: 4.1.2
+
+Device model: Samsung Galaxy Note II (Nordic version)
+
+Stock or customized system: Stock
+
+ownCloud app version: 1.4.5
+
+ownCloud server version: 5.0.10
+",2013/9/22 19:20,0.9036,gp:AOqpTOHdOB9-36ZyZYDR0q98JXfhfIH5x3CC7VQUROjyYZY9z73dD_oNM3NWx43Fi97iXPhwN4r54EKEG8bs24I,"Upload picture doesn't work anymore with the last version (2 December), A51 & S20+ Samsung, please fix",2020/12/9 19:14,,,,,,
+90312157,Auto grid only in folders with only pictures and server with remote thumbnails support,,2015/6/23 7:27,0.8974,gp:AOqpTOFkfCKnycle-qpLjLUy5SiUXekHnPELQjwshA7pf70k0BqmYZ7DkoxLs0wRlkmUM8Mlgj4lVQ9o-9TAZyU,"Don't work very well. Loading picture thumbnails take for ever, ""Sharing"" pictures with the App to store them into the cloud frequently fails. For my use case this app isn't very useful",2020/12/9 0:19,,,,,,
+49780877,4.2.2 - looses login data / SQlite db when rebooted,"rooted ACER V370, 4.2.2 - no matter if owncloud is installed at internal or sd card memory, it looses login data / SQlite db when the device is rebooted.
+
+Could the ""Android Jellybean Workaround APK"" help? If so, is there an alternate download of the apk, instead of da****d google play, available?
+",2014/11/22 9:46,0.9026,gp:AOqpTOHkHUsR__A9G762HRVeaevy8ne4JisOX_EMPT2Y7yeJ-ZgvCvcT6rDlMyFHzz5s4vUkBsfb1gMJ5bafVsM,"After many crashes I had to clear the caches, clear the storage data and reinstall the app. Then it worked again.",2020/12/1 18:52,,,,,,
+1009855042,Remove old way to retrieve the default camera folder path,"Clean some old code related to camera uploads.
+
+This code was used previously to select the default camera folder but it is not working anymore after moving to the native way.
+_____
+
+## QA
+",2021/9/28 14:49,0.8985,gp:AOqpTOEy-aKxZ4d3HWlKxrxvfLuPGC73KAd9zcSPL7Usg-tXNFlft8_cnfRICksxoTO3FUfcDYuWQuEXrAFH2SM,"Constantly in background as service, more invasive that would like, no option to turn off ""new folder with image detected""",2020/11/25 11:19,,,,,,
+248248785,System-wide trusted server certificates are not trusted in owncloud-android client,"### Actual behaviour
+-When connecting to a server that uses a server certificate that is trusted as per installed root certs in settings->security->trusted credentials, the dialog pops up that warns me about an unsecure certificate. I can choose ""YES"" to trust that certificate, of course, but this behaviour is still irritating and annoying.
+
+### Expected behaviour
+-Trust the server certs that are trusted as per installed root certs in settings->security->trusted credentials
+ 
+### Steps to reproduce
+1. Remove owncloud account in android owncloud client (this is to remove the current app-private server cert store `knownServers.bks`)
+2. Reinstall android owncloud client
+3. Connect to an https ownloud server which uses a server certificate that is trusted as per installed root certs in settings->security->trusted credentials.
+4. Voil_! The dialog will pop up.
+
+Can this problem be reproduced with the official owncloud server?
+No.
+
+
+### Environment data
+Android version: 7.1.2
+
+Device model: Google Nexus 5X
+
+Stock or customized system: No.
+
+ownCloud app version: 2.4.0
+
+ownCloud server version: 10.0.0.12
+
+
+### Connections to other issues
+I stumbled over this - in my eyes: curiosity - when working on #163 .",2017/8/6 13:57,0.9073,gp:AOqpTOGVnVmigk8CTFnDZ-X2dWmMDwVXsau6ou3GGequGx1W7poAtqpEywhTZ-u6OboBWRIIAX46IggcsVFPO08,Synchs everything on your phone to your own personal cloud server includong contacts.,2020/11/19 4:11,,,,,,
+135984878,Fix problems with Credentials error in uploads,,2016/2/24 7:43,0.9057,gp:AOqpTOGRyHRWqxjaZ_0T5Y3Xq8uvLktq2peNXBHAmAtzqEPBKLu9NO3oz7Ue1XdkuEyZW6s3slCJ-WV_CqRPyqE,"Upload does not work. Every attempt results in a sync conflict even in empty folders. Tapping the error notification says ""error creating dialog"".",2020/11/6 10:15,,,,,,
+51178191,subject mail populated when user shares >>file/folder<<,"in response to @rperezb issue #767 , the subject mail is now populated when the user shares either a file or folder. I also kept the same syntax as it is on the web, with file/folder name surrounded with greater and less signs. 
+",2014/12/6 10:15,0.9053,gp:AOqpTOElhwX_ek5sjpiDvhkqAqEDF9sxsQBkXPsqRMyIw5xBtFUv0BzQJEmFGUnfKLgYu2vC4rbnNGy2cpXakjc,"Doesn't seem to work, I see my files in the browser and on Windows, but the app shows the shared folder to be empty.",2020/10/21 15:07,,,,,,
+541509438,Ability to change sync start date to the past,"As follow up from https://github.com/owncloud/android/pull/2679 I miss tons of pictures on my wife's phone in our ownCloud.
+To be able to sync to missing pictures/videos I've to change change sync start date, the only way was to do it in database as a pro-feature
+This pull request has hard coded strings, but for me it works. I want to share it with you, but it's up to you how you proceed with: close unmerged, improve or merge
+
+![image](https://user-images.githubusercontent.com/3314607/71328222-d5375100-2513-11ea-80fe-02b1fc3e2d2e.png)
+",2019/12/22 22:36,0.8949,gp:AOqpTOEOy2JS2lJ16s8ERdFf2F7qY8zrm79gXEB6MU9r5ZpG5HlVR09hlkiaQ9-YeIlzFc1b4dc142dcr6w_oP4,Works mostly. Has some stability issues. Misses the mandatory contact and calendar sync support. I Hope it improves over time.,2020/10/9 11:57,,,,,,
+337823384,App cannot open folders with name that contains a space,"### Actual behaviour
+-Tell us what happens
+When trying to open folder or upload to folders containing space in their name, the app fails to do so. For example opening folder ""My Files"" will not work, whereas ""My-Files"" will be opened.
+
+### Expected behaviour
+-Tell us what should happen
+ The app should open folders containing a space in their name.
+
+### Steps to reproduce
+1.Make a folder with space in the name 
+2. Try to open it
+
+
+Can this problem be reproduced with the official owncloud server?
+(url: https://demo.owncloud.org, user: test, password: test)
+
+
+### Environment data
+Android version: Lineage OS 15.1 (Oreo)
+
+Device model: Xiaomi Redmi Note 5 Pro
+
+Stock or customized system: Customized
+
+ownCloud app version: version 2.7.0
+
+ownCloud server version: 10.0.9
+
+### Logs
+#### App log
+
+```
+07-03 12:43:53.739  4301 12666 E ReadRemoteFolderOperation: Synchronized /Documents/Physics/Krasi/Project Polyrad/: HTTP violation
+07-03 12:43:53.739  4301 12666 E ReadRemoteFolderOperation: org.apache.commons.httpclient.URIException: escaped absolute path not valid
+07-03 12:43:53.739  4301 12666 E ReadRemoteFolderOperation: 	at org.apache.commons.httpclient.URI.setRawPath(URI.java:2837)
+07-03 12:43:53.739  4301 12666 E ReadRemoteFolderOperation: 	at org.apache.commons.httpclient.URI.parseUriReference(URI.java:2023)
+07-03 12:43:53.739  4301 12666 E ReadRemoteFolderOperation: 	at org.apache.commons.httpclient.URI.<init>(URI.java:167)
+07-03 12:43:53.739  4301 12666 E ReadRemoteFolderOperation: 	at com.owncloud.android.lib.common.OwnCloudClient.followRedirection(OwnCloudClient.java:323)
+07-03 12:43:53.739  4301 12666 E ReadRemoteFolderOperation: 	at com.owncloud.android.lib.common.OwnCloudClient.executeMethod(OwnCloudClient.java:239)
+07-03 12:43:53.739  4301 12666 E ReadRemoteFolderOperation: 	at com.owncloud.android.lib.resources.files.ReadRemoteFolderOperation.run(ReadRemoteFolderOperation.java:79)
+07-03 12:43:53.739  4301 12666 E ReadRemoteFolderOperation: 	at com.owncloud.android.lib.common.operations.RemoteOperation.runOperation(RemoteOperation.java:266)
+07-03 12:43:53.739  4301 12666 E ReadRemoteFolderOperation: 	at com.owncloud.android.lib.common.operations.RemoteOperation.execute(RemoteOperation.java:142)
+07-03 12:43:53.739  4301 12666 E ReadRemoteFolderOperation: 	at com.owncloud.android.operations.SynchronizeFolderOperation.fetchRemoteFolder(SynchronizeFolderOperation.java:253)
+07-03 12:43:53.739  4301 12666 E ReadRemoteFolderOperation: 	at com.owncloud.android.operations.SynchronizeFolderOperation.run(SynchronizeFolderOperation.java:206)
+07-03 12:43:53.739  4301 12666 E ReadRemoteFolderOperation: 	at com.owncloud.android.lib.common.operations.RemoteOperation.runOperation(RemoteOperation.java:266)
+07-03 12:43:53.739  4301 12666 E ReadRemoteFolderOperation: 	at com.owncloud.android.lib.common.operations.RemoteOperation.execute(RemoteOperation.java:142)
+07-03 12:43:53.739  4301 12666 E ReadRemoteFolderOperation: 	at com.owncloud.android.operations.common.SyncOperation.execute(SyncOperation.java:91)
+07-03 12:43:53.739  4301 12666 E ReadRemoteFolderOperation: 	at com.owncloud.android.operations.RefreshFolderOperation.run(RefreshFolderOperation.java:143)
+07-03 12:43:53.739  4301 12666 E ReadRemoteFolderOperation: 	at com.owncloud.android.lib.common.operations.RemoteOperation.runOperation(RemoteOperation.java:266)
+07-03 12:43:53.739  4301 12666 E ReadRemoteFolderOperation: 	at com.owncloud.android.lib.common.operations.RemoteOperation.run(RemoteOperation.java:232)
+07-03 12:43:53.739  4301 12666 E ReadRemoteFolderOperation: 	at java.lang.Thread.run(Thread.java:764)
+07-03 12:43:53.739  4301 12666 E SynchronizeFolderOperation: Checked cdutsov@oc.tdcr.xyz/Documents/Physics/Krasi/Project Polyrad/ : HTTP violation
+07-03 12:43:53.739  4301 12666 E SynchronizeFolderOperation: org.apache.commons.httpclient.URIException: escaped absolute path not valid
+07-03 12:43:53.739  4301 12666 E SynchronizeFolderOperation: 	at org.apache.commons.httpclient.URI.setRawPath(URI.java:2837)
+07-03 12:43:53.739  4301 12666 E SynchronizeFolderOperation: 	at org.apache.commons.httpclient.URI.parseUriReference(URI.java:2023)
+07-03 12:43:53.739  4301 12666 E SynchronizeFolderOperation: 	at org.apache.commons.httpclient.URI.<init>(URI.java:167)
+07-03 12:43:53.739  4301 12666 E SynchronizeFolderOperation: 	at com.owncloud.android.lib.common.OwnCloudClient.followRedirection(OwnCloudClient.java:323)
+07-03 12:43:53.739  4301 12666 E SynchronizeFolderOperation: 	at com.owncloud.android.lib.common.OwnCloudClient.executeMethod(OwnCloudClient.java:239)
+07-03 12:43:53.739  4301 12666 E SynchronizeFolderOperation: 	at com.owncloud.android.lib.resources.files.ReadRemoteFolderOperation.run(ReadRemoteFolderOperation.java:79)
+07-03 12:43:53.739  4301 12666 E SynchronizeFolderOperation: 	at com.owncloud.android.lib.common.operations.RemoteOperation.runOperation(RemoteOperation.java:266)
+07-03 12:43:53.739  4301 12666 E SynchronizeFolderOperation: 	at com.owncloud.android.lib.common.operations.RemoteOperation.execute(RemoteOperation.java:142)
+07-03 12:43:53.739  4301 12666 E SynchronizeFolderOperation: 	at com.owncloud.android.operations.SynchronizeFolderOperation.fetchRemoteFolder(SynchronizeFolderOperation.java:253)
+07-03 12:43:53.739  4301 12666 E SynchronizeFolderOperation: 	at com.owncloud.android.operations.SynchronizeFolderOperation.run(SynchronizeFolderOperation.java:206)
+07-03 12:43:53.739  4301 12666 E SynchronizeFolderOperation: 	at com.owncloud.android.lib.common.operations.RemoteOperation.runOperation(RemoteOperation.java:266)
+07-03 12:43:53.739  4301 12666 E SynchronizeFolderOperation: 	at com.owncloud.android.lib.common.operations.RemoteOperation.execute(RemoteOperation.java:142)
+07-03 12:43:53.739  4301 12666 E SynchronizeFolderOperation: 	at com.owncloud.android.operations.common.SyncOperation.execute(SyncOperation.java:91)
+07-03 12:43:53.739  4301 12666 E SynchronizeFolderOperation: 	at com.owncloud.android.operations.RefreshFolderOperation.run(RefreshFolderOperation.java:143)
+07-03 12:43:53.739  4301 12666 E SynchronizeFolderOperation: 	at com.owncloud.android.lib.common.operations.RemoteOperation.runOperation(RemoteOperation.java:266)
+07-03 12:43:53.739  4301 12666 E SynchronizeFolderOperation: 	at com.owncloud.android.lib.common.operations.RemoteOperation.run(RemoteOperation.java:232)
+07-03 12:43:53.739  4301 12666 E SynchronizeFolderOperation: 	at java.lang.Thread.run(Thread.java:764)
+```
+
+",2018/7/3 9:47,0.9103,gp:AOqpTOE988v0hlGdxzvpmxnCjK1j6ZNJjiH1GxPcJnjKAg3VN3tO5DIYtcVo0yRLTfHnhWQgSrffDmt8VW22Rd8,"Brilliant. What would be good is to be able to open tabs within nextcloud, so that one could open Talk and at the same time have access to one's folders",2020/9/28 10:47,,,,,,
+49286096,Auto upload not working on HTC One X,"Hey Devs,
+
+Just a heads up saying the auto upload functionality doesn't work on my wife's HTC One X.
+
+Client:
+Android version 4.2.2
+ownCloud Android App version 1.6.1
+Device is not rooted, just plain HTC Sense out of the box with all software updated to the newest version.
+
+Server:
+Owncloud server version 7.0.3-1 from suse repository
+debian_version 6.0.10
+
+Tried:
+Rebooting android phone
+Rebooting ownCloud server
+Checking for updates, all was up to date.
+Checking/Unchecking auto upload
+Checking/Unchecking auto upload only on wifi
+Using different Camera app ""Vignette"", saving photo's to DCIM folder
+",2014/11/18 19:59,0.907,gp:AOqpTOGJEzQuhhVqenBdcNMP1KGZQ8SzvKGsM4bAutqwb3evJ8CjnGvs0iNRX-rsUs3Xm1HB3A1Nss7r40A-g4w,"The main reason I use this app is auto upload and it is not working, it worked for once tbh.",2020/9/26 16:36,,,,,,
+15740772,(As an ownCloud Android user I want) file size to be less confusing,"Currently the file size is shown in different cardinalities. This is very strange when there__ one file Â»5 MBÂ« and another file Â»145.98 kBÂ« _ the second one seems to be bigger from first sight because it has a bigger number.
+
+Instead, all file sizes should be shown in MB, and exactly one decimal unit (even 5.0 for 5). Differing from the web interface though we should show the Â»MBÂ« unit after each value though because there is no table heading.
+
+For sizes below 0.1 MB, show Â»<0.1 MBÂ« _ because a file below that size will be downloaded instantly anyway, almost regardless of network. For sizes above 1000 MB, show Â»>1000 MBÂ«, because a file above that size will take a looong time to download (the exact size and progress should be shown on the download bar screen as feedback).
+",2013/6/19 11:59,0.9089,gp:AOqpTOEq3jsWxUHSNSgXRZBgUsjbDee7cH5660yNyLh7BB9F8hqkWe3ZICqOIo0eCnLdpcGHkFQUm8yiJKQvkC0,Very limited features. Owncloud app much more rich. Might consider replacing with owncloud server just for their android app! Aug/20 Improvement on latest update 3.13.,2020/9/2 22:40,,,,,,
+24476331,Refactor remote operation to upload file,,2013/12/18 8:44,0.9116,gp:AOqpTOFnuvvHLCSdd3ijUM2YhE0xgE8405zTLC18lTbBW1SJqnSKMcp3ZWeTYsC8zwADtwXo40nqfgdHhnaaw_E,auto upload doesn't work and provides no log file to investigate,2020/8/27 7:38,,,,,,
+157736234,Get notifications from Announcement Center to the Android app as well,"To be able to get a broader reach the Android app should get notifications from the Announcement Center as well. 
+
+@jancborchardt What about adding a box for ""send to mobile devices""?
+
+@nickvergessen Could this be implemented to reach clients as well - iOS | Andoid | Desktop Client?
+",2016/5/31 18:16,0.8955,gp:AOqpTOEBo4n64CPKqspjwxipt3DuRvymYIZm7TEZ73i3rC1Lwv7dHJ5-X8k2C5w76Gtzng8QslaCEPRp4YoPXG0,"Love all the updates over the years, and in-app text editing is a great addition. Would love for push notifications to function since I use NC app approval as a form of backup 2FA, but it's not worth taking away any stars since I can just open the app and go to the notifications section to approve the login. People complaining about the app/server sync not working or other issues clearly have no idea what they're doing, been running NextCloud at home for over five years now with no problems.",2020/8/5 9:44,,,,,,
+161877885,Fix crash when adding a saml account,"Fixes #1719 
+",2016/6/23 9:27,0.9056,gp:AOqpTOGhlzAMhSvWNfRO3-QBzSX1diHRZdsITGcAjPxG6TnhCmVwcoM9Uw0z2hAjV8vpQYHYyUusaHGXDYqH9yM,Bad. Really bad. This app crashes too many times. And is required to have a GitHub account to send the crash report to the developers. Can you imagine that ?,2020/6/12 18:16,,,,,,
+16309627,Check account existance when entering in the app through an activity showing preview or details of a file.,,2013/7/3 9:46,0.902,gp:AOqpTOF45o_sRZGyEDqVwJpjg8aYoW1e2FN9R-u3HkPU9FbY0FYORpe3A1lTQho5EG0kYZ8A7V_ssvE5GBlIxQQ,It has potential but it feels untested. First thing I did was try to delete all default documents. But selection in this app doesn't work.,2020/6/4 20:52,,,,,,
+238909229,Configure BETA program in Play Store,"We are currently working on publishing the beta app in FDroid, so it would be a good moment to start to do the same in **Google Play Store**. 
+
+There are two ways to set up beta tests in Play Store:
+- **Closed beta**: to run a test with small groups or if **we know the exact users we want to test** the ownCloud app. Users in this test group can be managed by email address and only they will receive updates for the beta version (via link).
+- **Open beta:** to run a test with a large group, **anyone can join the beta program** and submit private feedback. Since ownCloud app is in live production version, users can opt-in to the beta program from the app details in Play Store (It's possible to set a maximum number of beta testers)
+
+In none of the options, testers can submit public reviews. 
+
+## AC
+- [x] Decide: closed or open beta // **Open beta**
+- [x] Decide Feedback channel (let the users know how they can provide us with feedback): email address, private feedback through Play Store (only for open beta), github repository, central. // **Apps email**
+- [x] Prepare beta release
+- - [x] Create open release beta in Play Store.
+- - [x] Upload a the beta signed apk. 
+- - [x] Add beta release info in Play Store.
+- [x] Send beta release to review.
+- [x] Publish beta.
+
+CC @michaelstingl @jesmrec @davivel",2017/6/27 16:26,0.8979,gp:AOqpTOFZSSa-FZv6OpT1khKf-oNquED985G2q9qYt8qvzDffQGxuy4xi_lbdtWtDit7NcpVLd3UDm8oTVZX3yes,Needs more functionality. Needs to be able to configure user settings like changing passwords and 2fa.,2020/5/12 2:48,,,,,,
+26342063,Give additional information about failed uploads,"I use the instant-upload feature of the owncloud app to backup my photos. If there is a problem with my server, I can't find any detailed information in the app but have to do all the debugging on my server. It would be great to have some kind of switch to enable extended error-messages.
+",2014/1/27 10:06,0.9062,gp:AOqpTOFPEog7QPKq13bbe8UhsoOMb45h3xbEj_UlcgJwjgENrgxK1LkeZ21PjBcKYhpcbdCYOIjP0FvIoW1u8uA,"Gets stuck during uploads, is quite slow when uploading multiple files, didn't understand how to disable notifications, etc... .",2020/5/11 21:29,,,,,,
+104007622,[Clarification request] SETUP.md instructions. /setup_env.sh: line 7: android: command not found ,"I do have the `Android Studio` installed (but not the stand-alone tools), working with it since a while. I wanted to start OC development and followed the instructions in https://github.com/owncloud/android/blob/master/SETUP.md .
+
+However, when running  `./setup_env.sh gradle` this fails on my machine in line 7 
+
+```
+/setup_env.sh: line 7: android: command not found.
+```
+
+Pls. assist, perhaps something is missing in the instructions, or not present in the PATH. If both the Android Studio and the stand-alone tools are needed, then it may be wise to add such a hint in the SETUP.md.
+",2015/8/31 8:13,0.8918,gp:AOqpTOFCJniWbuN5pcUy4qYqOy4OmGbJKI70fq1aUxC_A_Y-lIgtSbfm-C6QhmdMhaGXb5u-3atAOztaTiv54Dk,Missing autosync feature. Without it this app is equivalent of fancy gui for ftp server,2020/5/2 16:51,,,,,,
+367668851,Log in button only enabled when credentials are typed only during basic auth,"Fix to issue #2302.
+_____
+### BUGS & IMPROVEMENTS:
+
+- [x] (1) Log in button does not reappear after rotating the screen [FIXED]
+- [X] (2) After tapping URL, Log In button disappears https://github.com/owncloud/android/pull/2309#issuecomment-444187455  [FIXED]",2018/10/8 7:38,0.8978,gp:AOqpTOESQpd2aBvSY8a2pNie1U-uC0OuEcr6U5pn0UokHdqsfLFIWy9H4QKiJJixZM36lFwWgFAik3GFQfZek9M,Logging in with an active 2FA-totp is not working. I tried the normal and a separate decive/app password,2020/5/1 17:19,,,,,,
+52604966,Android app doesn't show available content on WebDAV share,"## Expected behavior
+
+If the ownCloud Android app is started it should connect to the ownCloud server and should show the available content of a user.
+## Actual behavior
+
+If the ownCloud Android app is started it connects to the ownCloud server but  the content of a user is not shown and the following messages are displayed:
+
+```
+Ladevorgang ...                       -> load process ...
+Alles leer. Laden Sie etwas hoch!     -> All empty. Upload content!
+```
+
+The following messages can be found in the Apache2 log file, which indicated to me that a connection could be established:
+
+```
+""GET /owncloud/status.php HTTP/1.1"" 200 77 ""-"" ""Android-ownCloud"" 576 2948
+""PROPFIND /owncloud/remote.php/webdav/ HTTP/1.1"" 207 632 ""-"" ""Android-ownCloud"" 341 1546
+```
+
+The owncloud.log file shows hundreds of these messages:
+
+```
+{""reqId"":""54972850dd112"",""app"":""core"",""message"":""DB execute with arguments : array (   0 => '13',   1 => '4fffea46331ab51134f008ce9b4671ef', )"",""level"":0,""time"":""2014-12-21 21:08:23+01:00"",""method"":""PROPFIND"",""url"":""\/owncloud\/remote.php\/webdav\/""}
+{""reqId"":""54972850dd112"",""app"":""core"",""message"":""DB execute with arguments : array (   0 => '13',   1 => 'd41d8cd98f00b204e9800998ecf8427e', )"",""level"":0,""time"":""2014-12-21 21:08:24+01:00"",""method"":""PROPFIND"",""url"":""\/owncloud\/remote.php\/webdav\/""}
+{""reqId"":""54972850dd112"",""app"":""core"",""message"":""DB execute with arguments : array (   0 => '13',   1 => 'ddbaf6bd108836d4afe269d86532a844', )"",""level"":0,""time"":""2014-12-21 21:08:24+01:00"",""method"":""PROPFIND"",""url"":""\/owncloud\/remote.php\/webdav\/""}
+```
+
+If I access the WebDAV share from my desktop PC or if I use the web browser on my Android device to access it, the available content is instantly shown.
+## Steps to reproduce
+
+1.) Start the ownCloud Android app
+2.) refresh the screen
+3.) wait ...
+## Environment
+#### Server Configuration
+
+OS: Linux 3.2.54
+Web server: Apache2 2.4.10 with **self-signed certificate**
+Database: MySQL 5.1.73
+PHP version: 5.4.35
+ownCloud version: 7.0.4
+#### Client Configuration
+
+Operating system: Android 4.4.2
+ownCloud Android app: v1.6.2
+Wifi quality: excellent
+Wifi speed: 65 Mbps
+",2014/12/21 20:19,0.9012,gp:AOqpTOFBwmoKQvQZlZM6VoKsZi2Oukxm1G8RkikfRxIQ9GI5IRe3wKp_4ICM_ngfa0kQBiJ2pZFrUinXVGgGRqM,"Videos don't reliably play in the app, but work fine in a web browser.",2020/4/17 13:29,,,,,,
+42377932,Restricted_Access app causes problems in displaying root folder,"When the Restricted_Access app is installed and active, users that are restricted from uploading to the root folder see none of the shared folders in ownCloud 7 when using the official ownCloud mobile client. 
+
+When using the non-official ownCloud client, restircted users are able to see the root folder with the items that have been shared with them even when the root folder is not writeable (restricted). This is the correct behavior.
+",2014/9/10 5:01,0.8981,gp:AOqpTOE_91aRrLvxCQGzM6tLu8sC-vIf_CsDhk-1c5jxJV3zOuPfs7TMAeVKy6rMtqrXQv8y1spdpejHrHn_73I,The app keeps crashing. I can't upload photos because of this. Please fix the problem.,2020/4/3 7:19,,,,,,
+20256554,Fix fake creation of instant uploads folder when app is offline,,2013/9/30 11:31,0.9253,gp:AOqpTOEdEvOiy_GNpHTtXjmtQFGtOq3iaHEuqyhBUMmdbvJKQ2o-GPHlHiUAi1cEcFECIvUcnYzpTusk2LpB_nk,App hangs whenever I try to add a large folder with media to the auto upload section.,2020/4/2 3:01,,,,,,
+33871764,Fixed accidental refresh when sending media file to other app,,2014/5/20 9:27,0.9128,gp:AOqpTOFC1tHb2a4fQ7rEcfru_Kf_DnBViCzPDBkzkQcedeFiRoUlGKGQ8NVJqC9IcABg7AkD2s220HkntWqZ4IM,Nice app but still has a lot to be desired such as custom directory sync and threaded uploads. It only uploads one file at a time at the moment.,2020/3/25 14:32,,,,,,
+15967118,Keep folders in sync,"I'd love to see functionality like dropsync has to periodically perform syncs on whole directories recursively. Something like tap and hold on folder -> popup menu shows up with option keep folder in sync. 2-way-sync would be even better (thinking about keepass etc.)
+",2013/6/25 8:45,0.893,gp:AOqpTOG99tNsxJ-sXPcWdOpmxRHW-JGcqInvTXMJy9EhFxfFXDPijA5AcxWOoIcPx_Sq8ZK-lqTqVOYuw09aJ04,It would be perfect if you could sync all files (old and newly created) from folders on instant upload.,2020/3/12 20:58,,,,,,
+122170750,View Photos Temporarily without Downloading them to System,"One personal annoyance is that the ownCloud app downloads every image that I open on my devices to the internal storage. Sometimes, I want to view an image just temporarily and NOT have it automatically downloaded and stored to /sdcard/owncloud/.../.
+
+Perhaps downloading them into a cache would be more proper, then if the user clicks the menu button, offer to let them download the image and then it would be appropriate to save it to /sdcard/owncloud/.../.
+
+Otherwise every image I view from a different folder (and I have many, many folders) from the ownCloud app triggers Google Play Services to shoot me a notification asking if I want to backup that folder to Google Photos.
+",2015/12/15 1:24,0.8963,gp:AOqpTOHznJtKs_vhJlYIuduX0Zeyro11noeWDHww6iRGuKoo0-RXMuoDKskaRTsGabRv4vuEziqxMu5l-P8U1Eo,"Just installed (Galaxy S8+), but...no option to upload all photos after initial install.",2020/3/10 2:40,,,,,,
+8432504,app loses owncloud access data when installed in the SD card,"Every now and then after entering the apps security PIN I don't get to my owncloud root directory but get the configuration site where I should enter the URL and access details of my ownclod account. This is quite annoying as entering URLs and passwords with special characters on the mobile keyboard is rather unhandy.
+
+Also after successfully reentering the account data it looks like the app does a full rescan of the file database which can take a while and eat a lot of battery depending on the size of the data in your owncloud.
+
+The version of my app is 1.3.14
+",2012/11/16 21:29,0.9069,gp:AOqpTOHdvA_OkOblmBpAF7G0QxCWmRo9rygxPZ5mouPSHkGzSCkRCv9YWpxOy9tWh-uDWEWo1Ehmfx0O2nlSWhU,"Good app. Better than owncloud. But need more features. 1. Connect using local ip when on specific wifi. 2. Cache/sync folder contents, rather than refreshing when folder is accessed. 3. Fix file uploads, it stops when app is not in use.",2020/3/1 13:53,,,,,,
+29079400,Updated library reference to get fix of headers in OCS requests,,2014/3/10 8:46,0.8983,gp:AOqpTOHxiSMh6D3gDkOke6t9Stb0WV0d7oU6uNeqebgbPHv76R9iy0zcbg0CFbArAVLQCtsuo-Q77E3fa1uCqw8,Unable to upload the documents/pics due to some unknown error. Request help for the same.,2020/2/24 15:33,,,,,,
+115552861,"Beta: 2015-11-05 Menu entry ""Upload images taken with camera"" is repeated in the config","Is there any difference between the two? 
+",2015/11/6 17:40,0.9024,gp:AOqpTOHSMAHgtvDnORhcm9YS50ncHu_1-gO5LFJjAyJRvSAGcd_dI3K63GwTpTb26RtLkFyP1lrWYS5A5bkC_oA,"Pro: - Auto upload separate images and videos, so that I could setup upload images over data but save videos for wifi - Able to upload when connect to wifi even when app is not running in foreground Con: - Sometimes should see java stacktrace, which is OK for me (java developer), but might not for everyone.",2020/2/6 20:29,,,,,,
+90029543,[Grid] As an OC Android user I want the grid mode to be shown only when the 100% of the files are images so that by default it will be used the file list view,"AC:
+- By default it is  shown the list view. Unless 100% of the files in the folder are images (not counting subfolders of course) _ then the gallery (grid) view is used.
+
+Note:
+- This is the first step, then it will come other user stories where a button to switch between views will be included
+- Related to: https://github.com/owncloud/android/issues/894
+",2015/6/22 7:10,0.9098,gp:AOqpTOEzVpk5lcfObaN0r2DzKUD-ZvWiBTW51ys4Ai05Il-5XBN6Vk-sFU1r6eQdtKbzp3_71FeaScLNM4I4YLU,"Complete disappointment. It's not even close to replacing Google Drive, OneDrive or DropBox. Missing a simple command to simply download files to Android's default Downloads folder, but one has to look it up in some some obscure app data folder (assuming the user has a file manager installed). No document editing capability - not even for simple text files.",2020/1/19 12:38,,,,,,
+49782809,Automated upload of files from selected folders out of local OC folder,"Hi,
+
+just an idea:
+My whatsapp folder is growing and growing and consuming lots of (rare) memory.
+So the idea is to extend the instantupload to watch any folder that we specify.
+
+With this all whatsapp images/videos will automatically be uploaded to owncloud. When I have no memory left I can go to owncloud and say ""delete local files"" on the whatsapp folder.
+(And via root explorer I can delete all folders/images in /data/whatsapp).
+
+Later it would be great if the files are not copied but remain on the original storage path.
+Then it would be possible to delete the whatsapp images from within owncloud app, which would be a great benefit for all users that do not have root or do not know that files are duplicated (but this is another issue, that already exists: #346 ).
+
+What do you think? Or do you have a better idea to solve this?
+
+PR: #1650 
+",2014/11/22 10:51,0.9448,gp:AOqpTOF4S1-jRrKtR1n601FzGaBel9U4yaz8XirjqB6PYDff7NFanPP_TN9ybBYbYvSae07JgtanpnQd26cnA2Y,Setting up own auto upload folder doesn't work. I can't select the folder.,2020/1/9 19:44,,,,,,
+115392471,Beta: app crashes when copying a file ,"***********\* CAUSE OF ERROR ************
+
+java.lang.NullPointerException: Attempt to invoke virtual method 'java.util.Iterator java.util.ArrayList.iterator()' on a null object reference
+    at com.owncloud.android.ui.activity.FileDisplayActivity.requestCopyOperation(FileDisplayActivity.java:830)
+    at com.owncloud.android.ui.activity.FileDisplayActivity.access$300(FileDisplayActivity.java:119)
+    at com.owncloud.android.ui.activity.FileDisplayActivity$3.run(FileDisplayActivity.java:694)
+    at android.os.Handler.handleCallback(Handler.java:739)
+    at android.os.Handler.dispatchMessage(Handler.java:95)
+    at android.os.Looper.loop(Looper.java:148)
+    at android.app.ActivityThread.main(ActivityThread.java:5417)
+    at java.lang.reflect.Method.invoke(Native Method)
+    at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:726)
+    at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:616)
+
+***********\* DEVICE INFORMATION ***********
+Brand: google
+Device: hammerhead
+Model: Nexus 5
+Id: MRA58K
+Product: hammerhead
+
+***********\* FIRMWARE ************
+SDK: 23
+Release: 6.0
+Incremental: 2256973
+",2015/11/5 22:44,0.8937,gp:AOqpTOExiH3R0XUofGz9dg_mOX4DkiyyGdnO3dfp0YNtX0QfIMlJv99gw54d2xDsssHCkFT7O0Bc3SoT-x6wTLE,"Nice app, but the missing sync of old files in a folder is annoying",2019/12/8 9:35,,,,,,
+125444936,"Beta 20160103: Error I got repeatedly when opening a share dialog (server was busy, no clue if relevant)","***********\* CAUSE OF ERROR ************
+
+java.lang.IllegalStateException: Can not perform this action after onSaveInstanceState
+    at android.support.v4.app.FragmentManagerImpl.checkStateLoss(FragmentManager.java:1489)
+    at android.support.v4.app.FragmentManagerImpl.enqueueAction(FragmentManager.java:1507)
+    at android.support.v4.app.BackStackRecord.commitInternal(BackStackRecord.java:634)
+    at android.support.v4.app.BackStackRecord.commit(BackStackRecord.java:613)
+    at android.support.v4.app.DialogFragment.dismissInternal(DialogFragment.java:201)
+    at android.support.v4.app.DialogFragment.dismiss(DialogFragment.java:167)
+    at com.owncloud.android.ui.activity.FileActivity.dismissLoadingDialog(FileActivity.java:885)
+    at com.owncloud.android.ui.activity.FileActivity.onRemoteOperationFinish(FileActivity.java:731)
+    at com.owncloud.android.ui.activity.ShareActivity.onRemoteOperationFinish(ShareActivity.java:164)
+    at com.owncloud.android.utils.GetShareWithUsersAsyncTask.onPostExecute(GetShareWithUsersAsyncTask.java:92)
+    at com.owncloud.android.utils.GetShareWithUsersAsyncTask.onPostExecute(GetShareWithUsersAsyncTask.java:44)
+    at android.os.AsyncTask.finish(AsyncTask.java:651)
+    at android.os.AsyncTask.-wrap1(AsyncTask.java)
+    at android.os.AsyncTask$InternalHandler.handleMessage(AsyncTask.java:668)
+    at android.os.Handler.dispatchMessage(Handler.java:102)
+    at android.os.Looper.loop(Looper.java:148)
+    at android.app.ActivityThread.main(ActivityThread.java:5417)
+    at java.lang.reflect.Method.invoke(Native Method)
+    at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:726)
+    at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:616)
+
+***********\* DEVICE INFORMATION ***********
+Brand: google
+Device: hammerhead
+Model: Nexus 5
+Id: MMB29K
+Product: hammerhead
+
+***********\* FIRMWARE ************
+SDK: 23
+Release: 6.0.1
+Incremental: 2419427
+",2016/1/7 17:24,0.8994,gp:AOqpTOH1_H9lXzuKvhZViYy3npGR00xObBs1qq-GEFzwzMn0E8RwtSAbMV6AolGwvNEaW-ez35uDbXTRWzhxHkg,Works on all of my devices except for this tablet. Can't get it past am initial login and refresh of an account and it never wants to clear out old data. Not happy. Works better through my web browser.,2019/11/28 1:02,,,,,,
+256598248,Username normalization in owncloud beta (2.5.1-beta 1) prevents login with ldap user,"### Actual behaviour
+- Username is altered (or normalized) automatically after first login. Space is changed to underscore.
+
+### Expected behaviour
+-Username should not be altered.  
+ 
+### Steps to reproduce
+1. Install owncloud latest beta. (Hint: Same behavior with latest nextcloud dev-version) 
+2. Login with username containing a space. [Here authentication is done against LDAP server]. First login works, but app (almost) instantly redirects back to login screen, where you have to login again. But: 
+3. Username is changed from 'Firstname Lastname' to 'Firstname_Lastname' and the username field can't be modified, so the username can't be changed and the user can't authenticate against LDAP server. User is locked out and has to reinstall app.
+
+### Note
+Username is not changed with latest ownCloud stable (2.4.0) (or latest nextcloud).
+
+### Workaround
+[Only works in nextcloud-dev:] Also configure to login with Email-Account as login attribute in LDAP. Username is changed as described above in app, but login is done with Email-Address. 
+**Update**: After some time, nextcloud decided to change my username from username@mailserver.com@owcloudserver.com to user_name@owncoudserver.com. 
+Conclusion: Some recent change in the owncloud and nextcloud app changes the login account to the username in owncloud. But this is not necessarily my login username. 
+Now it seems, that oc and nextcloud share a recent code change. All the time, I wished that both Teams work together to fix the instant upload issue. Now I wish, that they did not work together. :-)
+
+### Environment data
+Android version: 7.0
+Device model: Samsung Galaxy S7
+Stock or customized system: Stock
+ownCloud app version: 2.5.0 beta 2
+ownCloud server version: 9.1.6
+
+",2017/9/11 6:50,0.9099,gp:AOqpTOEAIZOXlXEFPKXSdRkdyfRHZ8GjKTFKxBA18048Df0oIiL1rUGdnXaAZlBer6dUYIrDCVCljxFCepnM6rg,"Stuck at login - grant access - revert to old login method - login again loop (SM-A40, android 9). On the other hand, 3.9.0 works just fine with BB key one (android 8.1.0).",2019/11/14 19:52,,,,,,
+18210984,Fails to create file or folder within Samba folders.,"To reproduce:
+add a samba mounted folder
+within the folder 
+  try to create folder: error ""Directory cannot be created""
+  try to upload file: Upload failed, Upload of <filename> could not be completed.
+",2013/8/18 18:03,0.9015,gp:AOqpTOFyLIftdWmRZCIR8VlscysW9-czN3Hs3jFy0lq88L3uctmqG6qWlps5EEdCd7PJrp8lJtYmN5rK80nxnW0,"Does not support real syncronization of folders. I'd consider this a core feature, but with this app there is no way to automatically link a local and remote folder, whose contents will then be kept the same. Only automatic upload of new files to a remote folder.",2019/11/14 17:51,,,,,,
+115917028,External sd - allow users to specify storage path,,2015/11/9 16:48,0.902,gp:AOqpTOHrhsUzawjTQAKquYG64zErKXKUsR1UbXrWUePX54qb5haUl5AHWNGWiZp_RXqxP4d0a4zp-fsKaZbOnDI,Would be nice if I could change the storage path manually instead of having these four templates. I have the same problem that have many android users: insufficient internal memory. But I have an sd-card to which I cannot assign a storage path...,2019/11/7 10:31,,,,,,
+280103957,Include new dialog to encourage users to add a new app review in PlayStore,"It would be great to increase the number of app reviews in Play Store so that we can receive more feedback from our users.
+
+The idea is to create a new dialog that would appear from time to time (we will think about the exact frequency), asking the users for a new review and redirect them to the PlayStore.
+
+Mockup:
+
+![rate_dialog](https://user-images.githubusercontent.com/15261363/33764566-2db0c1d0-dc15-11e7-9a40-820ee074fcd6.png)",2017/12/7 11:59,0.9089,gp:AOqpTOElG_cpX9tm4BGJuvwJrnIfA2QsAe6McHNdEMu6Z6n2wbA8_axv_iotRnjbRqdWznnxB-2pXw6PJRLuiPs,Great app but still no Nextcloud admin features to manage users etc...this would make this a 5 star app with those features,2019/10/3 19:30,,,,,,
+101242996,Owncloud app should accept as many share content as possible ,"The owncloud app is listed among the apps to share information whenever you choice to share something.  However,  most of the time the share fails,  since the owncloud app does not know how to handle the data.  This is really frustrating.  The most advantage purpose of having access to the owncloud server on an android device is the point that one is able to add very quickly content.. Owncloud on the go... 
+
+The Owncloud app should therefore try to handle as much shared data as possible.  If there are multiple ways,  it could offer a selection.  E.g. saving as txt or odt. 
+Furthermore,  the settings could define standard saving options.  E.g. Save in the folder notes/income/ save as $date-time-app-name.  
+It should be possible to save text,  images,  videos, links,  html,  etc.  
+An example how such a saving method could work would be the save dialogs of the firefox webbrowser, where one can simply save as default by a single click or allow customized saving settings. 
+",2015/8/16 8:32,0.8937,gp:AOqpTOGIh3uqgUQqDS4A0NTCaNXWTSMbWb_XKmYNjlZdX3EGz--0Kpd7awxQ_OL5Dt2CvQ0NVB-Ps_KLc0MBGWU,"Great open source app (and platform). Latest version fixes sever unavailable (even though server is contactable via https on same device) issue. Would be nice if you could tag photos in the app and then share via tag, but this is not really the apps fault.",2019/9/20 6:57,,,,,,
+493306951,[BUG] Copy/Move a folder with content to a different oC account using the document provider doesn't work as expected,"Updated: 2020-08-10
+
+### Steps to reproduce
+1. Login with two different accounts in the ownCloud app.
+1. Open Files app or other app supporting the document provider.
+2. Select an ownCloud account from the side menu.
+3. Long press a folder with subfolders and files inside and press copy/move to in the three-dots menu.
+4. Select a different ownCloud account as destination to copy/move the files.
+
+### Actual behaviour
+- Folder, subfolders and containing files are not totally copied. Sometimes some items are missing, other times the operation is not performed. Behaviour is not stable
+
+### Expected behaviour
+- Folder, subfolders and containing files are properly copied.
+ 
+### Environment data
+Android version: 11
+
+Device model: Pixel2 Android11, Nexus6P Android 7
+
+ownCloud app version:  `f911f01`
+
+#### ownCloud Android app log
+
+```
+2021-08-10 16:56:12.162 29439-30091/com.owncloud.android.debug E/DatabaseUtils: Writing exception to parcel
+    android.os.ParcelableException: java.io.FileNotFoundException: Remote Operation failed
+        at android.provider.DocumentsProvider.call(DocumentsProvider.java:1069)
+        at android.content.ContentProvider.call(ContentProvider.java:2448)
+        at android.content.ContentProvider$Transport.call(ContentProvider.java:517)
+        at android.content.ContentProviderNative.onTransact(ContentProviderNative.java:295)
+        at android.os.Binder.execTransactInternal(Binder.java:1154)
+        at android.os.Binder.execTransact(Binder.java:1123)
+     Caused by: java.io.FileNotFoundException: Remote Operation failed
+        at com.owncloud.android.providers.DocumentsStorageProvider.checkOperationResult(DocumentsStorageProvider.kt:404)
+        at com.owncloud.android.providers.DocumentsStorageProvider.deleteDocument(DocumentsStorageProvider.kt:333)
+        at android.provider.DocumentsProvider.callUnchecked(DocumentsProvider.java:1170)
+        at android.provider.DocumentsProvider.call(DocumentsProvider.java:1067)
+        at android.content.ContentProvider.call(ContentProvider.java:2448)_
+        at android.content.ContentProvider$Transport.call(ContentProvider.java:517)_
+        at android.content.ContentProviderNative.onTransact(ContentProviderNative.java:295)_
+        at android.os.Binder.execTransactInternal(Binder.java:1154)_
+        at android.os.Binder.execTransact(Binder.java:1123)_
+2021-08-10 16:56:12.163 29404-30083/? E/CopyJob: Failed to copy content://org.owncloud.documents/document/6
+    com.android.documentsui.services.ResourceException: Failed to delete file content://org.owncloud.documents/document/6 due to an exception.
+        at com.android.documentsui.services.Job.deleteDocument(Job.java:290)
+        at com.android.documentsui.services.MoveJob.processDocument(MoveJob.java:186)
+        at com.android.documentsui.services.CopyJob.processDocumentThenUpdateProgress(CopyJob.java:386)
+        at com.android.documentsui.services.CopyJob.start(CopyJob.java:243)
+        at com.android.documentsui.services.Job.run(Job.java:162)
+        at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:462)
+        at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+        at java.lang.Thread.run(Thread.java:923)
+     Caused by: java.io.FileNotFoundException: Remote Operation failed
+        at java.lang.reflect.Constructor.newInstance0(Native Method)
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:343)
+        at android.os.ParcelableException.readFromParcel(ParcelableException.java:56)
+        at android.os.ParcelableException$1.createFromParcel(ParcelableException.java:82)
+        at android.os.ParcelableException$1.createFromParcel(ParcelableException.java:79)
+        at android.os.Parcel.readParcelable(Parcel.java:3281)
+        at android.os.Parcel.createExceptionOrNull(Parcel.java:2368)
+        at android.os.Parcel.createException(Parcel.java:2357)
+        at android.os.Parcel.readException(Parcel.java:2340)
+        at android.database.DatabaseUtils.readExceptionFromParcel(DatabaseUtils.java:190)
+        at android.database.DatabaseUtils.readExceptionFromParcel(DatabaseUtils.java:142)
+        at android.content.ContentProviderProxy.call(ContentProviderNative.java:732)
+        at android.content.ContentProviderClient.call(ContentProviderClient.java:603)
+        at android.content.ContentResolver.call(ContentResolver.java:2395)
+        at android.provider.DocumentsContract.deleteDocument(DocumentsContract.java:1460)
+        at com.android.documentsui.services.Job.deleteDocument(Job.java:281)
+        at com.android.documentsui.services.MoveJob.processDocument(MoveJob.java:186)_
+        at com.android.documentsui.services.CopyJob.processDocumentThenUpdateProgress(CopyJob.java:386)_
+        at com.android.documentsui.services.CopyJob.start(CopyJob.java:243)_
+        at com.android.documentsui.services.Job.run(Job.java:162)_
+        at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:462)_
+        at java.util.concurrent.FutureTask.run(FutureTask.java:266)_
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)_
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)_
+        at java.lang.Thread.run(Thread.java:923)_
+2021-08-10 16:56:12.172 29404-29404/? E/FileOperationService: Job failed to process docs: [DocumentInfo{docId=6, userId=0, name=Images, mimeType=vnd.android.document/directory, isContainer=true, isDirectory=true, isArchive=false, isInArchive=false, isPartial=false, isVirtual=false, isDeleteSupported=true, isCreateSupported=true, isMoveSupported=true, isRenameSupported=true, isMetadataSupported=false, isBlockedFromTree=false} @ content://org.owncloud.documents/document/6].
+```",2019/9/13 12:47,0.9104,gp:AOqpTOEDakYgOQm_k7b5x6LPXXB1ZIDF0qTqfJlqkrwuDknky6k6OPVQjMb4g5ZP5EdP8r95W5ST8SJGj1ovZ24,"Hello, Autoupload doesn't work. I manually created folder on the server using web browser, and checked in the app to create year folder and month. It gives ""connection error"" in uploads queue. So the app is almost useless for me",2019/9/16 19:39,,,,,,
+20927909,Make OwnCloud a source of files to other apps in the device through regular ACTION Intents ,"Dropbox has done this already. If an application asks you what (generic) file to open, Dropbox is one of the options (like OI File Manager and friends), but OwnCloud is not.
+
+Ideally, it would be like Dropbox: Allow me to pick a file from inside OwnCloud, download it to a temporary location and pass it back to the calling application.
+",2013/10/13 15:10,0.8936,gp:AOqpTOHf5WirfoBIGfo2xwfGT62k5ouLv0aJTCUzQuFQ7V4It9b1xcxsJ4SbRSg-6NUTYrDDK-uybhXB5K6A4V8,The control of uploads is great and far more detailed than my experience with other third party apps (that aren't Google/apple/Microsoft).,2019/9/15 20:48,,,,,,
+9037215,deleting last account should automatically move you back to the login screen,"Currently when you remove the last account, you just see the account list with no accounts in it. To add a new account you need to manually click the Â»Add accountÂ« in the corner. But what else are you going to do? Hence, when the last account is deleted you should automatically be redirected to the login screen.
+",2012/12/5 22:57,0.9288,gp:AOqpTOHr8BCJyfHreqt0HReIV7amhGj43e45nKLkmjeVyu1kgzVDgiQAAMnyFAqKx5N3RCLAjqM55o5sCZIvfrE,"Can not login, after i enter my password i keep looping back to the login menu",2019/9/10 13:06,,,,,,
+41967476,"After a manually accepted certificate on an owncloud server is updated, the android app stops communicating with the server","I am running the android app version 1.5.8. I am running an SSL-enabled owncloud server supported by a CA, that is not in the trusted CA list of my android device, so I had to manually accept the certificate in my owncloud client.
+
+I recently updated the certificate on my server to a new certificate by the same CA. I noticed that the file listing on my android client wasn't updated anymore. When trying to manually update the list, I get a busy icon for less than a second, but my file list doesn't update. No warning message was shown in the user interface. After I set the password for this account again (which wasn't changed), I got a certificate warning message again. After having accepted the new certificate here, I could again use my owncloud account.
+
+I assume that if the server certificate doesn't match, the connection is silently dropped and no warning is shown to the user. I suggest to show the certificate warning dialog here again instead of silently dropping the connection.
+
+@eriktews I (@rperezb) edit your issue to have a better tracking of the scope and expectations:
+
+STEPS:
+- Having a ssl self signed cert installed on the ownCloud server
+- Install the Android app and log in accepting the cert
+- From the server side, change the cert
+- Do any action on the Android app such as refresh
+
+CURRENT STATUS:
+- The app stop working, every request to the server fails
+
+EXPECTED BEHAVIOUR:
+- When this change is detected, we will show a similar popup to the one shown when you accept the cert for the first time
+- This is detected when the current folder is refreshed, similar behavior to the case when the credentials have changed
+- if any upload fails due to the change of the certificate the error shown will be: connection error
+
+NOTE:
+It has been reported on  #1420  #1463 and #1515 
+",2014/9/4 18:14,0.9137,gp:AOqpTOFqC5LR36_HEYFJM8gbQoezgmG4OONdU2hH9wxOBcXhoL6kIMgEKsEdNh-6oL-FTnLOaQwcxRg7bXOqmb4,Best syncing app for backing up to my self hoseted server.,2019/9/2 16:51,,,,,,
+66453750,Crash on share action from Photos application,"Running version 1.7.0 from f-droid
+Selected two photos from Photos application, received two separate crashes (one for each photo i guess?)
+
+**first**
+
+```
+--------- beginning of crash
+E/AndroidRuntime( 4411): FATAL EXCEPTION: main
+E/AndroidRuntime( 4411): Process: com.owncloud.android, PID: 4411
+E/AndroidRuntime( 4411): java.lang.RuntimeException: Unable to start service com.owncloud.android.files.services.FileUploader@2dd9a0d with Intent { cmp=com.owncloud.android/.files.services.FileUploader (has extras) }: java.lang.NullPointerException: Attempt to invoke virtual method 'boolean java.lang.String.startsWith(java.lang.String)' on a null object reference
+E/AndroidRuntime( 4411):    at android.app.ActivityThread.handleServiceArgs(ActivityThread.java:2911)
+E/AndroidRuntime( 4411):    at android.app.ActivityThread.access$2100(ActivityThread.java:151)
+E/AndroidRuntime( 4411):    at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1401)
+E/AndroidRuntime( 4411):    at android.os.Handler.dispatchMessage(Handler.java:102)
+E/AndroidRuntime( 4411):    at android.os.Looper.loop(Looper.java:135)
+E/AndroidRuntime( 4411):    at android.app.ActivityThread.main(ActivityThread.java:5254)
+E/AndroidRuntime( 4411):    at java.lang.reflect.Method.invoke(Native Method)
+E/AndroidRuntime( 4411):    at java.lang.reflect.Method.invoke(Method.java:372)
+E/AndroidRuntime( 4411):    at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:903)
+E/AndroidRuntime( 4411):    at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:698)
+E/AndroidRuntime( 4411): Caused by: java.lang.NullPointerException: Attempt to invoke virtual method 'boolean java.lang.String.startsWith(java.lang.String)' on a null object reference
+E/AndroidRuntime( 4411):    at com.owncloud.android.files.services.FileUploader.isPdfFileFromContentProviderWithoutExtension(FileUploader.java:896)
+E/AndroidRuntime( 4411):    at com.owncloud.android.files.services.FileUploader.obtainNewOCFileToUpload(FileUploader.java:685)
+E/AndroidRuntime( 4411):    at com.owncloud.android.files.services.FileUploader.onStartCommand(FileUploader.java:270)
+E/AndroidRuntime( 4411):    at android.app.ActivityThread.handleServiceArgs(ActivityThread.java:2894)
+E/AndroidRuntime( 4411):    ... 9 more
+```
+
+**second**
+
+```
+D/AndroidRuntime(31994): Shutting down VM
+E/AndroidRuntime(31994): FATAL EXCEPTION: main
+E/AndroidRuntime(31994): Process: com.owncloud.android, PID: 31994
+E/AndroidRuntime(31994): java.lang.RuntimeException: Unable to start service com.owncloud.android.files.services.FileUploader@2a43b9d8 with Intent { cmp=com.owncloud.android/.files.services.FileUploader (has extras) }: java.lang.NullPointerException: Attempt to invoke virtual method 'boolean java.lang.String.startsWith(java.lang.String)' on a null object reference
+E/AndroidRuntime(31994):    at android.app.ActivityThread.handleServiceArgs(ActivityThread.java:2911)
+E/AndroidRuntime(31994):    at android.app.ActivityThread.access$2100(ActivityThread.java:151)
+E/AndroidRuntime(31994):    at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1401)
+E/AndroidRuntime(31994):    at android.os.Handler.dispatchMessage(Handler.java:102)
+E/AndroidRuntime(31994):    at android.os.Looper.loop(Looper.java:135)
+E/AndroidRuntime(31994):    at android.app.ActivityThread.main(ActivityThread.java:5254)
+E/AndroidRuntime(31994):    at java.lang.reflect.Method.invoke(Native Method)
+E/AndroidRuntime(31994):    at java.lang.reflect.Method.invoke(Method.java:372)
+E/AndroidRuntime(31994):    at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:903)
+E/AndroidRuntime(31994):    at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:698)
+E/AndroidRuntime(31994): Caused by: java.lang.NullPointerException: Attempt to invoke virtual method 'boolean java.lang.String.startsWith(java.lang.String)' on a null object reference
+E/AndroidRuntime(31994):    at com.owncloud.android.files.services.FileUploader.isPdfFileFromContentProviderWithoutExtension(FileUploader.java:896)
+E/AndroidRuntime(31994):    at com.owncloud.android.files.services.FileUploader.obtainNewOCFileToUpload(FileUploader.java:685)
+E/AndroidRuntime(31994):    at com.owncloud.android.files.services.FileUploader.onStartCommand(FileUploader.java:270)
+E/AndroidRuntime(31994):    at android.app.ActivityThread.handleServiceArgs(ActivityThread.java:2894)
+E/AndroidRuntime(31994):    ... 9 more
+```
+",2015/4/5 16:18,0.8934,gp:AOqpTOGQgDS1qwZUImE5LpsVyAFgEUf9esAFVhrLwxSyftspLrsnFcSrEE7PSmTntp5c_yeWM2ylxAeA8VSqGuA,should have handled photos better. It has a photo tab but very slow and can crash the app sometimes.,2019/7/30 18:24,,,,,,
+16258923,Modify password of an existing account with long press in the list of accounts,,2013/7/2 11:09,0.8941,gp:AOqpTOGHaTJfU0JNb6Iu3gUbWHv5oBYSBTP1svf_Ho6Vw3SiNSqfsj-WipgCGElaHWlr4Rp5R7nAB6e9l3an-Jw,"Seeminglt after a password change on the web version of Nextcloud, you cant re-login / update the password... Meaning you are forced to add a ""new account"". Resulting the current upload queue not to run. Numerous reports about this matter on GitHub! Next to this the app has not an option to sync the gallery with nextcloud which are missing nor does it have an option to sync all images (like the iOS app has) ... -3",2019/7/29 22:07,,,,,,
+38836735,Sync Local File Directory AND Remote Directory together,"This is more of a feature than an issue, but it could be of some relevance to the automatic photo/video uploader. 
+
+There needs to be a way where we can select a local directory and a remote directroy so that they can be synced either both ways, or just to the remote/local folder (a bit like FolderSync) since if the app wasn't running, then not all my photos/videos would be uploaded and since the app doesn't search for any new media, then they won't be uploaded to the server.
+
+It'd be great if this was up in the high priority list, but I know that there may be higher priorities already queued up.
+",2014/7/27 10:56,0.89,gp:AOqpTOHUsO4mYFn7ysoQ_6IeHUtsWM993TcSerJGOqDQegz3yV5bj_t3A2Nb0cP9RAgUFrENPv_Tdyjm1q0TZNc,Server setup is a nightmare for the average user. The android app doesn't auto sync existing files. The desktop app struggles with specific file names. Self managed cloud is great but has a long way to go...,2019/6/10 2:59,,,,,,
+115558668,When viewing the downloaded original with the app it seems to show less details then viewing the same picture with another  app,"I was really trying to make sure it is not an illusion, but I can confirm it now. When I view the original in OC app it has fewer details (and also allows less zooming in) then QuickPic on the very same picture.
+
+It there any technical reason for this behaviour? I was using the app on my tablet with android 4.1.1.
+
+Please, let me know if I can provide other information that would be useful to You.
+",2015/11/6 18:14,0.8969,gp:AOqpTOE0BsPoE2NkXy5PqjXrzu2DUb3oz_V33o-EyFHff24itYY0YR3IMfEtamlQHHIC5byoWbv9LSNej_MIXYI,"Great product -- though the web version using Firefox works better than the whole app for simple things like creating/renaming folder or uploading pictured for me. In the app it almost always loops infinitely in a wait status. This has been like this for months, if not years. Android9/Pixel2.",2019/5/29 16:45,,,,,,
+16215375,Change Instant upload Location,"I tried to search for this, and hope this isn't a repeat issue. I was wondering if it would be possible to change or upon initial set-up to pick where your instant uploads go. I am running ownCloud and mounting an SMB share so I can have access to all my files on my file server. If I could have the ownCloud android app save my instant uploads to that SMB share, that would be amazing! That way I could centralize everything and not have to move things later.
+ownCloud has made it possible for me to start getting rid of my dropbox. You guys are awesome.
+",2013/7/1 13:59,0.9059,gp:AOqpTOHCC0dnNL_Bro2NI-4X3t_TFKIKo6irxDo61oQHTbtkfHowSbySLd-PUKz_BhPdUc6GXR0BVI_wzDOT_WM,With the latest update to the app auto upload fails to work.,2019/4/23 16:28,,,,,,
+20167730,Android app don't login (IMAP user backend),"Hi, i'm running owncloud 5.0.11 with IMAP user backend. Login over web browser (on PC and Android), CalDAV on Android  works fine.
+But ownCloud app do not login, it print ""Wrong username or password"".
+When i use account from internal database (admin account) it login and synchronize  successfully.
+
+android app version 1.4.5
+",2013/9/27 12:30,0.9229,gp:AOqpTOHlOuYYKKfW890IooqItA9xUNj-jE0pW7YFzcw2o54uM-9Rf6E-CqSefgpmTWU3avVNAl2WonLlYTFn_Iw,Why I CAN login in my nextclowd from the phone's browser and this app is still asking and asking and asking me for password to login in app?? Why? What's wrong????,2019/4/7 1:32,,,,,,
+49685275,"Revert ""Add ""select all"" option to photo (or other) upload screen""","Reverts owncloud/android#669
+",2014/11/21 11:18,0.914,gp:AOqpTOF7K1Bid-C4CsxLZ6tNpyPjXjDm2xEPukpPP1PtNhxEk9AV46CtIFUnnXY8s80juZ-bgSCeTPQy8h-ePCs,"Not working for me, I can log, manual upload but if I want tu upload more then 10 photos, after a few stops uploading them. Auto upload is not working as well. I disable battery performance, I added all the permissions, etc. I am on android 9.",2019/4/3 9:01,,,,,,
+51176609,Share a picture folder inside the phone gallery,"That would be awesome. At the moment I cannot put a picture from owncloud inside a gallery on my android.
+
+Android supports multiple galleries so I think why not have a feature to make any picture folder from owncloud appear in the android gallery?
+
+This will make it much easier to integrate pictures into apps, i.E. setting a wallpaper for the texting (SMS) app.
+",2014/12/6 8:58,0.9101,gp:AOqpTOHTEnfdMKp_VhJLHrLGAb_uB7ipWtX6q6lCrf0odV3rO6zzxTqfdXWPewBPlccjpj8o3NcV2yVmzrlAZKY,"nothing happens on my note 9, after choosing the pictures from local phone folder and remote folder to upload to.",2019/3/20 15:01,,,,,,
+10923345,add handling for failed uploads,"- extend existing FileUpload, so we can handle failed-instand-upload later
+- add new Activity InstantUploadActivity to handle failed-instand-upload 
+- new Activity InstantUploadActivity can be started in two ways:
+   -touch to the 'Faild Upload Notification'
+   -submenue underneath the upload menue  
+",2013/2/12 20:13,0.9056,gp:AOqpTOFINyLefUIPAww64SAU4lUMp17SN7P7dEolH_p6uLlSK6aiffjBIWMMWOdFjvVYCjomSQEmyXps71I_6r4,"even when disabling ALL automatic uploads, it still tries to upload files.",2019/3/10 8:17,,,,,,
+381102494,Lost authentication with app password,"### Actual behaviour
+Authentication info lost. App says authentication failed.
+Need to login again.
+
+### Expected behaviour
+Never lose auth info.
+ 
+### Steps to reproduce
+Not reproducible accurately, happened by chance.
+
+Android app is configured to connect using an app password that was manually generated on the server.
+
+Here is what I was doing:
+- edited file ""pomodoro.md"" on Monday 12th November between 11-12 AM CEST, not sure if I was online
+- later that day I noticed the conflict and told it to create two files
+- the next day I solved the conflict with the desktop client and the mobile app just synced it down
+```
+x.x.x.x - vincent - [12/Nov/2018:18:28:39 +0100] ""DELETE /remote.php/dav/files/vincent/clientsync/work/pomodoro%20(2).md HTTP/1.1"" 204 - ""-"" ""Mozilla/5.0 (Linux) mirall/2.5
+.0""
+x.x.x.x - vincent - [12/Nov/2018:19:26:24 +0100] ""PROPFIND /remote.php/dav/files/vincent/clientsync/work/pomodoro.md HTTP/1.1"" 207 895 ""-"" ""Mozilla/5.0 (Android) ownCloud-a
+ndroid/2.9.1""
+x.x.x.x - vincent - [12/Nov/2018:19:26:25 +0100] ""GET /remote.php/dav/files/vincent/clientsync/work/pomodoro.md HTTP/1.1"" 200 2739 ""-"" ""Mozilla/5.0 (Android) ownCloud-andro
+id/2.9.1""
+```
+- later on the mobile app told me again about a conflict, not sure why. I simply told it to use the server version (IIRC it was on Wednesday 14th)
+- on Wednesday evening around 11 PM I noticed that the Android app was not able to authenticate any more
+
+### Environment data
+Android version: 9
+
+Device model: Nokia 6.1 (2018) TA-1043
+
+Stock or customized system: stock
+
+ownCloud app version: 2.9.1
+
+ownCloud server version: 10.0.10
+
+### More information
+
+There are two tokens involved:
+- ""408c3ef82e3450d5791bd570199c3b1c0d68a5a1459df4fc574f7dc4d90ec001113d254a3d1d807f2251bc2c5d52f1d939a64709bacfdb52b9fac41386502e0d"" is the token associated to the app password which I called ""nokia-oc"" in the server
+- ""4b72207608f411692af037fe9bc8bb767c59216f495e3ff20e6689055ed3f7c7a05e9a4f37731f3fe1218a850ee31081fdab4fb5ff08c99fe8c96ebed84b4c63"" is another mysterious token.
+
+Around the time where the auth seem to have dissapeared, the log looks like this:
+```
+{""reqId"":""0abb7fc5-f3ac-4a27-8d86-db87a261599a"",""level"":0,""time"":""2018-11-14T15:07:52+00:00"",""remoteAddr"":""77.190.150.229"",""user"":""--"",""app"":""OC\\User\\Session::checkTokenCredentials"",""method"":""PROPFIND"",""url"":""\/remote.php\/dav\/files\/vincent\/clientsync\/work\/pomodoro.md"",""message"":""checking credentials for token 408c3ef82e3450d5791bd570199c3b1c0d68a5a1459df4fc574f7dc4d90ec001113d254a3d1d807f2251bc2c5d52f1d939a64709bacfdb52b9fac41386502e0d with token id 96027, last check at 1542205654 was more than 5 min ago""}
+{""reqId"":""0abb7fc5-f3ac-4a27-8d86-db87a261599a"",""level"":0,""time"":""2018-11-14T15:07:52+00:00"",""remoteAddr"":""77.190.150.229"",""user"":""--"",""app"":""OC\\Authentication\\Token\\DefaultTokenProvider::updateToken"",""method"":""PROPFIND"",""url"":""\/remote.php\/dav\/files\/vincent\/clientsync\/work\/pomodoro.md"",""message"":""updating token 96027, last check is now 1542208072""}
+{""reqId"":""0abb7fc5-f3ac-4a27-8d86-db87a261599a"",""level"":0,""time"":""2018-11-14T15:07:52+00:00"",""remoteAddr"":""77.190.150.229"",""user"":""--"",""app"":""OC\\Authentication\\Token\\DefaultTokenProvider::updateTokenActivity"",""method"":""PROPFIND"",""url"":""\/remote.php\/dav\/files\/vincent\/clientsync\/work\/pomodoro.md"",""message"":""updating activity of token 96027 to 1542208072""}
+{""reqId"":""24182fbb-9109-41d9-99d6-b2e60c689c52"",""level"":0,""time"":""2018-11-14T15:07:53+00:00"",""remoteAddr"":""77.190.150.229"",""user"":""--"",""app"":""OC\\Authentication\\Token\\DefaultTokenProvider::getToken"",""method"":""PROPFIND"",""url"":""\/remote.php\/dav\/files\/vincent\/clientsync\/work\/pomodoro.md"",""message"":""token 4b72207608f411692af037fe9bc8bb767c59216f495e3ff20e6689055ed3f7c7a05e9a4f37731f3fe1218a850ee31081fdab4fb5ff08c99fe8c96ebed84b4c63 does not exist""}
+```
+
+and matching access log entries:
+```
+x.x.x.x - vincent - [14/Nov/2018:16:07:52 +0100] ""PROPFIND /remote.php/dav/files/vincent/clientsync/work/pomodoro.md HTTP/1.1"" 207 895 ""-"" ""Mozilla/5.0 (Android) ownCloud-android/2.9.1""
+x.x.x.x - vincent - [14/Nov/2018:16:07:53 +0100] ""PROPFIND /remote.php/dav/files/vincent/clientsync/work/pomodoro.md HTTP/1.1"" 401 270 ""-"" ""Mozilla/5.0 (Android) ownCloud-android/2.9.1""
+```
+
+It looks like during normal operation, the Android client will use the correct token ""nokia-oc"" when connecting to the server. We can see that it was able to PROPFIND the ""pomodoro.md"" file with success.
+However, for some strange reason, the above request is followed by another PROPFIND that uses the ""mysterious token"" instead and receives a 401 error.
+
+The ""mysterious token"" stopped existing on the server already since October, more than a month ago:
+```
+{""reqId"":""r.=VqbU=DSt9rR2B\/akiPeRk"",""level"":0,""time"":""2018-10-19T11:41:50+00:00"",""remoteAddr"":""2.247.253.227"",""user"":""--"",""app"":""OC\\Authentication\\Token\\DefaultTokenProvider::getToken"",""method"":""PROPFIND"",""url"":""\/remote.php\/dav\/files\/vincent\/clientsync\/"",""message"":""token d745719c898742aef10b97962154ad2258285efd9ddb5d42947dec3391d4171b2f1f7554bf73df3a9f959397aa7b2fa816fc5cb618748700490546aa9e9c7468 does not exist""}
+```
+
+So to me it looks like the Android client somehow still remembers that old token and here decided to use it again. Due to the 401 failure, it interpreted this as a ""total auth failure"".
+
+When attempting to repeat the auth, it now continues to use the ""mysterious token"" instead of ""nokia-oc"".
+
+I'm not sure whether this is related to the conflict situation or not. Maybe inspect the code paths related to conflict requests and see if it's using the right token. Also not clear why it would switch back to this old token.
+
+Is there a way to inspect the app's internal database to see if this token was still stored somewhere ?
+Sadly I now reconfigured the account by entering a new app password, so not sure if there is any info to recover for debugging.
+
+Also, interestingly, now that the app can connect again, it once again tells me about conflicts on the ""pomodoro.md"" file... there could be another bug there.
+
+@jesmrec ",2018/11/15 10:44,0.8907,gp:AOqpTOHpmf9xj26zqfArIuUc8AcGOX3nQT5EZyCDCnj8KRZu7owmVDBWrg7V9WOUQhdL8ZviwCWINYMjYzgeZVY,worked nicely until the most recent update which caused the authentication to fail. it wouldn't let me remove my account or anything so I had to reinstall the app.,2019/2/17 14:26,,,,,,
+1078851725,The upgrade to scoped storage broke uploading of edited files,"After switching to scoped storage (release 2.19.0), when files are edited locally they are not synced back to the server.
+
+Steps to reproduce:
+
+1. Create an OpenDocument file on the ownCloud server.
+2. Set the file to be offline in the ownCloud client.
+3. Install the Collabora OpenOffice Android app if it isn't already installed.
+4. Tap on the OpenDocument file in the ownCloud client.  Select Collabora from the suggested list of apps to open the file.
+5. Edit the file and save it.
+6. ownCloud will not upload the edits to the server.  Pulling down to refresh also does not initiate a transfer.
+7. Opening the file again shows that the edits were saved, indicating that the updated file exists locally.
+
+This functionality used to work with prior versions of ownCloud, and there is nothing inherent in scoped storage and the Storage Access Framework that should prevent this from working now.  Rather, it probably represents an unintended bug introduced in the refactoring of the code for scoped storage that now no longer checks for uploading modified files.",2021/12/13 18:32,0.8978,gp:AOqpTOFjERRQtki3opkJNp_N43MTBa8wczgccFc-hq8T6uLCS8Uttvrfd2xLtdu7ULzHS6i8gJBtalHDstN8GmQ,"Autoupload. Does. Not. Work. Not only, uploading photos via sharing function creates unwanted local folders and duplicate files, wasting memory space.",2019/2/16 7:57,,,,,,
+17005639,Android and iPad client still show deleted files ,"### Expected behaviour
+
+The Owncloud file client on Android and iPad doesn't show files, that were deleted on the server before.
+### Actual behaviour
+
+The Owncloud file client on Android and iPad shows the last file, that was deleted on the server before. Trying to access that file from the Android/iPad client results in an error message, that either the file is broken or doesn't exist.
+It works after a while and I assume, because I closed and reopened the ownCloud site in my browser on the server.
+### Steps to reproduce
+1. On the server delete some files in the browser.
+2. In the Android or iPad ownCloud client hit 'Refresh'
+### Server configuration
+
+MAMP-Stack from week 29/2013.
+Operating system: OSX 10.6.8
+Web server: Apache/2.2.23 (Unix) mod_ssl/2.2.23 OpenSSL/0.9.8x DAV/2 PHP/5.4.10 
+Database: SQLite
+PHP version: 5.4.10
+ownCloud version: 4.5.13
+
+Browser: Firefox 22.0
+Operating system: OSX 10.6.8
+### Client configuration
+
+Android: 2.2
+Latest ownCloud client
+
+iPad: iOS 6.1.3
+Latest ownCloud client
+",2013/7/20 12:03,0.8902,gp:AOqpTOFhkcDNDtq6Xw8mLNR6wlHyaHca1spirTVs-fp-sIzZ41zMcBGwSppdEMtqUpGGkWPakFUoDTOlztgSxKE,"The app is very user friendly. However, it has some bugs. Auto Upload doesn't not work. Fails to upload any files from selected folder.",2019/2/6 2:52,,,,,,
+78961300,MATERIAL DESIGN: As an OC user I want that the new list & grid components from Material Design replace the current so that performance is improved in folders with hundreds of files & images,"Google states that the new elements for lists and grid view included in the Android Support Library help to improve the performance of lists and grids with tons of elements. I couldn't check it, but it's obvious they _enforce_ the recycling of views instead of simply allowing the option to do it (or the option to forget to do it and have problems; see #955 fixing it). If there is also a better recycling policy behind, we will only notice it by start using them.
+
+Nevertheless, there are other important reasons to embrace this change:
+- The GridView widget currently in use is a mess; it's not fully implemented in all the Android versions (even in different 4,x versions). This fact already caused crashes in the past, and is still enforcing some undesired graphical effect in older 4.x devices (my lips are sealed). Using the new Grid element in Android Support Library we will have a single and complete implementation for all our grids.
+- Both components are needed if we want to take advantage of new elements for cool animations in Material Design. 
+
+Sure of interest for @tobiasKaminsky , @jancborchardt , and everybody is welcome.
+
+Just please, remember, that #692  should be done first (or at least the part of the build target).
+
+---
+# Details
+## Branch
+
+Implementation will be done on feature branch https://github.com/owncloud/android/tree/984_recycler_view
+## Issues
+
+Issues referenced/mentioned in this issue and their current status:
+- [x] #955 - MERGED - HOTFIX: prevent OOM when scrolling Thumbnails
+- [x] #692 - MERGED - Update to Material design: add OC THEME based on Material Design THEME
+- [x] #1090 - MERGED - Material buttons and checkboxes
+- [x] #1076 - MERGED - Material Design
+- [x] #1100 - MERGED - Material FAB with speed dial implementation
+- [x] #1473 - MERGED - Move to compile target Marshmallow (Android 6 - v23) - rebased without FAB
+- [x] #1559 - TO-REVIEW - Toolbar, new Drawer and new Account Manager
+## TODOs
+- [x] Bump support lib to latest version - #1557 
+- [ ] Add recycler view dependency for gradle and ant
+- [ ] implement recycler view for list and grid
+",2015/5/21 11:52,0.9031,gp:AOqpTOF54_6rnmpLvRTQqPxw2q9ALWai6ZLxckGoByV6PfCSUKMPj7P2--j027ygPNEK6tYa_jIE8fa4VuKjiy8,Works great. Would suggest a change to the gallery tab to utilize a folder structure instead of loading every image. For a large number of images this takes forever to load and has no discernable structure.,2018/12/26 16:35,,,,,,
+8087464,Configure download folder (external_sd),"At the moment with version 1.3.12 on Android 2.3.6 the ownCloud  client seems to sync with a hardcoded folder at /sdcard/owncloud.
+
+On my phone /sdcard points to the internal memory of the phone, which is quiet small.
+
+Please add an option to set the syncing target directory in the client.
+",2012/11/4 10:32,0.8976,gp:AOqpTOFVKl-ePO772nRYkqUbDU_tbqt_22RSWZkoBAyE9yTKG3efOGzjkX0AHAh3DZAYTEe5XJj8LdsO4t9VwYM,"user interface hard to figure out. It lacks basic functionality or is it just hidden by ui? Look at FolderSync Pro as a good example. Unlike this app, I can configure source and destination folder paths. Unfortunately, FolderSync no longer works since I updated Nextcloud server.",2018/12/18 21:39,,,,,,
+17775002,Dataloss when uploading pictures.,"IÂ´ve noticed that sometimes I only get half the picture when the picuters I take on my phone (via the android app) in ""instantupload"". I get half of the picture, the other half is grey, sometimes itÂ´s just a third of the picture and so on.
+
+Expected behavior:
+
+Pictures should not be gray or blurry with different colors
+Data loss should not happen
+
+Actual Behavior:
+Pictures become gray
+Pictures have data loss
+
+Steps to reproduce:
+Take several pictures with the mobile app
+Let them be uploaded
+Take a look at them
+
+OC version: 5.0.9
+Android version: 4.2.2
+Phone model: Samsung GT-9305 & GT-9500
+Server: Ubuntu Server 12.04.2 LTS
+OC Android app: 1.4.4
+Mobile internet: up to 40 MBit/s (4G) (Normally around 25 MBit/s)
+
+This is not happening always, but sometimes. Would be nice if it didnÂ´t happen at all!
+
+Thanks!
+",2013/8/7 21:25,0.9107,gp:AOqpTOHg7QH7tsshO3yTRGA-3xW5_OVjsAxrIrKUsh6YqBMzkr3vVD8FYH0oSfG0RuKA24dLGaCnjVf74xhylTI,Does not incorporate all the functionality of Nextcloud. Only good for uploading files,2018/12/17 19:06,,,,,,
+143812805,Upload files: automatically create thumbnail,"When uploading an image the app should automatically generate a thumbnail.
+This enhances the UX as the app has only to generate thumbnails for files on the server when entering a folder.
+",2016/3/27 14:16,0.9008,gp:AOqpTOErGoneMmSkhMNrFrXEzTWn1hUe8Nh6WdJE4-OA-4PSLwWiqSGWCYz1HsdGE77TuqTB1EqEa6uqy_nRg0Y,"Auto upload very unreliable. Sometimes files get uploaded, sometimes not. Dropbox never has problems like that.",2018/12/9 5:49,,,,,,
+268651562,Unable to build app on android studio,"### Actual behaviour
+Unable to build the app on Android Studio
+
+### Expected behaviour
+There should be no error while building the app
+ 
+### Steps to reproduce
+1. Import the project in android studio
+
+**Screenshot of the issue**
+
+<img width=""1401"" alt=""screen shot 2017-10-26 at 12 35 39 pm"" src=""https://user-images.githubusercontent.com/22047421/32039155-aa27da38-ba4a-11e7-88b0-802f64ffcdf4.png"">
+
+",2017/10/26 7:11,0.8938,gp:AOqpTOEbUhroariNN4pRJdpjpOyGhcsUTw8zA0qGHWcMCKPHd-z0QFLxADvLB00NpJDj4PMAS5M5FVQ21o6Q4EM,Works perfectly. Active developer and community working on improving the app.,2018/10/23 17:21,,,,,,
+185665264,Login Test Suite Espresso,"UI testing suite on the Â´AuthenticatorActivityÂ´ activity to check the login feature.
+
+Included:
+- Positive and negative test cases. 
+- Checks in both orientations 
+- Accounts Manager: to add/remove ownCloud accounts from device.
+
+To do:
+- SAML Servers
+
+",2016/10/27 13:15,0.8986,gp:AOqpTOE8CGEncAnRcq_TmyubSP_ufCTpC9M6qRGsEbEvP6FQIk5ISiLRqUyGc71qI1pFjZ1e87FSv_uVUfk3s6c,"Trying to login... simulator. My other 3 computers work fine, just not this app.",2018/9/29 2:08,,,,,,
+49505436,Allow to change InstantUpload folder name/path from settings,"Could be very useful to allow users define custom ""/InstantUpload"" folder for photos and videos. I mean, I prefer to have uploaded media to ""/Personal/Camera"" instead of default folder. It shouldn't be so difficult to implement, shoud it be?
+",2014/11/20 7:39,0.9111,gp:AOqpTOE2JRah8WlTAy6IsE-ndcZ9oYbjruaxcTPPTebBNOpuoVFJtywCboahi1p7hyr1uWW45xw0zMshbw1G7sk,Would be nice with a universal sort option instead of having to set sort for each folder. Favorites doesn't work proparly. No support for apps. App crashes upon opening txt files.,2018/9/20 9:37,,,,,,
+8433363,feature request: exclude certain directories from syncing/indexing,"I have a folder in my owncloud account that contains several 100 GBs of video files. As I quite surely never will need them on my mobile phone and they make the indexing of the whole folder structure a quite lengthy process it would be nice to tell the app to exclude some folders from syncing or indexing.
+
+This could maybe be achieved similar to the way which k9mail goes: there one can set folders as main folders that are automatically synced with every sync process and other folders, where only the folder structure itself is indexed. If you enter one of the latter folders theres a button that lets one load the content of the folder if needed.
+
+By this one could restrict the folders that one needs to be synced or indexed on the mobile phone and therefore keep syncing/indexing times short and battery saving.
+",2012/11/16 22:02,0.8954,gp:AOqpTOFhhTuBBnmwahISZYtWIK2WM3cHaBQLWQJhb-s9dL0vPndeBVztC4kAMV1h3uahoCcb4UUDGEOAWFagKAg,Kind of useful. The directory sync feature missing is the only real issue.,2018/9/6 14:49,,,,,,
+28747923,S4 and App for OwnCloud blank screen after login,"Dear reader,
+
+i searched the forums and found similar problems but no real fix for it.
+I have a Galaxy S4 and Owncloud installed on Linux. The owncloud is functioning fine, i can login with the App on Samsung S3, S2 and Webdav on win7 and with webbrowsers.
+So the problems doesnt seem to be in the server but on the S4. The S4 has Android version 4.3 on it. What happens is, as soon as i open the App (after i put in the server and password) a blank screen comes with the little Cloud in the Top and thats it. After that it does nothing. Does anyone has any ideas on how to fix this ? Thank you very much for your response in advance. 
+And i already tried de-install and re-install etc.
+
+P.
+",2014/3/4 22:37,0.931,gp:AOqpTOGcyVzsCxdMMmUdSsQMQkwKURejyzu0lbqeYZKXDMO6Bp3gfks17WfFk545M6IyttjksBZBqcbRmr76T9c,"Not happy with it, try to login and immediately get sent back to login screen",2018/8/30 20:26,,,,,,
+15736735,Fixed contradicted messages in login view,,2013/6/19 10:16,0.9195,gp:AOqpTOHJO170Rq_JhtValnYXjZWSLz0gq0FnYmlJPKAZz7WBURabzp-xuH4QyZJP2lGdY2xoq4BSfg2I2uOMHrE,"Useless, login loop won't let me access my files. Fix this!",2018/8/6 2:21,,,,,,
+141068800,"Upload via ""share with owncloud"" from third party app does not work","Open third party app (e.g. Gallery), open file/photo, choose ""Share with"" ... ownCloud. Nothing happens. 
+
+Logcat:
+
+```
+03-15 19:59:58.482 4911-4911/com.owncloud.android D/Uploader: Uploading file to dir /InstantUpload/
+03-15 19:59:58.652 4911-4911/com.owncloud.android D/Uploader: onPause() ending
+03-15 19:59:59.203 4911-4911/com.owncloud.android D/Uploader: onStop() ending
+03-15 19:59:59.213 4911-4911/com.owncloud.android D/Uploader: onDestroy() ending
+03-15 19:59:59.223 4911-4911/com.owncloud.android V/OperationsService: Destroying service
+```
+",2016/3/15 19:01,0.8941,gp:AOqpTOG5bTHmrZNcH_khSUDUTRGc4_2sLTabV25ZlH4j1nwuUQ4kxvafb7kqEZw00a2hj7A4jg0Sa25mQGptcZs,"Auto upload does not work reliably. This is the main reason to have this 
+app on your phone.",2018/8/1 21:42,,,,,,
+18844445,WiFi login page causes Android client to fail silently,"I am using my own installation of OwnCloud 5.0.10, and the Android client 1.4.4.
+
+My WiFi network at work redirects all traffic to a login page. Once you've logged in it remembers your device (presumably by MAC address?) and stops redirecting traffic.
+
+If I attempt to browse my server using the Android client before I log in, no error is displayed. Instead, I'm presented with an empty / folder.
+
+If I exit the client, browse to a website, log in to WiFi, then return to the client, then I can see my files.
+
+I'd expect that if the client receives a nonsensical response (e.g. a WiFi login page) it'd display some sort of error message instead of just an empty file list.
+",2013/9/1 23:36,0.915,gp:AOqpTOGtC8zsiTmZOODNSPunK9ltYP3iZN0JxbN5mZs12hNuKphLuAppAuqSejVTReiNOgzZAn9CBpYJeX3vBzI,"I have used nextcloud for years. This version sends me back to login screen 
+every few seconds. Same as other users have experienced. I can log in no 
+problem with iOS version and directly through a web browser. Very annoying.",2018/7/23 9:56,,,,,,
+74992249,Share as .. copy link to clipboard automatically,"Hi!
+
+I often want to share something from my Android and then copy&paste link to some IM to friends.
+
+Now I have to:
+1. Open the thing I want to share and touch to share via OwnCloud
+2. Look up the directory in which I want to upload it
+3. Open OwnCloud app, browse to that directory and open uploaded file and get shareable link
+4. Paste to IM
+
+It would be really great to have option to directly share something to predefined directory and shareable public link will be added to clipboard automatically. So there will be another ""OwnCloud share link"" option in Share via menu.
+
+What do you think?
+",2015/5/10 20:12,0.8971,gp:AOqpTOEYvaCvN8e34oUGzkLf-0B5PRg2oSyToN-DkM2AjAF2QC_cPoT9SzHcPch40783hRvkiZTT-E0JeYqvqPw,"Unusable piece of junk. Keeps switching to login screen after logging in. 
+Unusable in any form. Owncloud works fine",2018/7/14 8:33,,,,,,
+12052850,Fixed instant upload for photos,"Listened for wrong broadcast action. should be:
+http://developer.android.com/reference/android/hardware/Camera.html#ACTION_NEW_PICTURE
+
+Requires SDK 14
+",2013/3/15 7:41,0.9097,gp:AOqpTOEae830J6NVpbAJfIqNcs_YlJ3Uign27jRDVNrh9Ua9f8QRymdBF9qQFw2gl9sxAoJKfXcSlt24sPMiXp4,"Auto upload is not reliable and often will not work, without telling you. 
+Photo previews will often not show up in directories or at all when you 
+click on an image (without downloading).",2018/7/10 3:10,,,,,,
+34941953,[1.5.7] Automatic upload over Wi-FI jumped to cellular,"Traveled abroad yesterday and noticed something strange with the automatic upload of pictures. My default setting is to only upload when connected to Wi-Fi. All was well until I connected my phone to the airport network that requires me too start the browser and accept the TOS. Only after that do I get a connection to the Internet.
+
+What happened was that before I had a chance to accept the TOS, ownCloud started to try and upload 400 images (3-400MB in total) that I took during my visit. And of course the upload failed. But after accepting the TOS, the upload worked. And then it was time for me to board my flight and I switched off Wi-Fi and expected the upload to stop, but no, instead the upload jumped over to the cellular network and started to eat away my precious 20 MB/day quota when I__ abroad. Managed to switch off the cellular network and the uploads started to fail, after killing the app in the Android settings did the madness stop.
+
+Android did notify me when I connected to the airport Wi-Fi that I needed to sign in/accept the TOS. Is it possible to get the ownCloud app to halt the upload until there actually is a working connection to the Internet and not just a connection to a local Wi-Fi/AP network? It should try to __ing_ the server and see if it gets a valid response back before starting the automatic upload.
+#### Expected behaviour
+
+Upload should have stopped when the Wi-Fi connection was turned off. 
+#### Actual behaviour
+
+When Wi-Fi was turned off, the ownCloud resumed the automatic upload over the cellular network instead of just stop the upload and wait for a Wi-Fi connection.
+#### Environment data for Samsung Galaxy Note 2
+
+**Android version:** 4.1.2
+
+**Device model**: Samsung Galaxy Note II
+
+**Stock or customized system**: Stock
+
+**ownCloud app version**: 1.5.7
+<br><br>Server runs 6.0.3
+",2014/6/4 9:12,0.8941,gp:AOqpTOH2nh5wtGUcI8TabBnE7XvRwg4Jgv4tRQoAcoXk4uqTL15hzdYCQTfXw6wr609_OGNylr2WQvXSrTZROAw,"i don't know if auto upload works on mobile data because i cant get it to 
+work on mobile data even if i unchecked only upload on unmetered wifi",2018/7/8 4:31,,,,,,
+47170496,Remote thumbnails are not fetched after the app was just installed,"STEPS TO REPRODUCE:
+1. Uninstall OC app from the test device, if installed;
+2. Install OC app;
+3. Log in an account in a server with thumbnails API support
+4. Access to a folder containing some images
+
+EXPECTED BEHAVIOUR: 
+1. After a while, image icons are replaced with thumbnails of the images (except for TIFF images)
+
+CURRENT BEHAVIOUR:
+1. Thumbnails do not appear until the app is killed an opened again
+",2014/10/29 16:29,0.9047,gp:AOqpTOETvBcSrOxAhocgCyROqQ2nU6dcWGjFl7CJvUzjNE2zCydtaggX6SiQb1kSVAkHs_cCn6awUh9nxS_QgiY,"Love the app, but for some reason thumbnails are not loading unless you 
+click on the actual picture then a few thumbnails load. I may have an 
+incorrect setting. Can you help?",2018/7/1 12:40,,,,,,
+11666184,Upload failed: could not be copied to owncloud local directory,"I cannot upload files.
+It may be because my phone's internal memory does not have so much space left. But 14MB should be enough for a photo. 
+My SD card has lots of space.
+",2013/3/5 13:11,0.904,gp:AOqpTOG1Eb8Av6UWOnQ2XiPVVEew3QS5lhPF_gj92f5zxH6Url4ugBhb6xy_08x6nXbfuwSiZX_YzUATLOrk1no,"Does not work with owncloud anymore. Now I need to use 2 clients. thats 
+annoying",2018/6/26 11:43,,,,,,
+17877695,Feature Request: flickr style thumbnail view of images,"It would be great if there could be a choice of various ""views"" for images/image folders.
+
+A flickr style view for example, showing thumbnails of images.
+",2013/8/9 18:18,0.8952,gp:AOqpTOFTP3PKFb2x65UbQuDmIlVMwaw4DsjuiJKclufU9H4JQrHpH4GnvT-av6mhBVoGI-7lCejRxVM87OvBSZI,Images getting cropped on the right side when previewing. Edit: Sent email with screenshots.,2018/4/10 16:35,,,,,,
+621887765,[BUG] App crashes sometines when opening share by link,"By executing automatic tests with Appium, the following crash happens sometimes when creating public link. It seems to happen after matching the name of the public link.
+
+```
+2020-05-19 17:27:09.084 7719-7826/io.appium.uiautomator2.server I/appium: Find element command using 'id' with selector 'com.owncloud.android:id/shareFileName'.
+2020-05-19 17:27:09.184 7719-7828/io.appium.uiautomator2.server I/appium: Find element command using 'id' with selector 'com.owncloud.android:id/addPublicLinkButton'.
+2020-05-19 17:27:09.272 7719-8004/io.appium.uiautomator2.server I/appium: Find element command using 'id' with selector 'com.owncloud.android:id/shareViaLinkNameValue'.
+2020-05-19 17:27:09.295 12142-12142/? E/AndroidRuntime: FATAL EXCEPTION: main
+    Process: com.owncloud.android, PID: 12142
+    kotlin.KotlinNullPointerException
+        at com.owncloud.android.presentation.ui.sharing.fragments.PublicShareDialogFragment.updateInputFormAccordingToServerCapabilities(PublicShareDialogFragment.kt:640)
+        at com.owncloud.android.presentation.ui.sharing.fragments.PublicShareDialogFragment.updateCapabilities(PublicShareDialogFragment.kt:624)
+        at com.owncloud.android.presentation.ui.sharing.fragments.PublicShareDialogFragment.access$updateCapabilities(PublicShareDialogFragment.kt:63)
+        at com.owncloud.android.presentation.ui.sharing.fragments.PublicShareDialogFragment$observeCapabilities$1.invoke(PublicShareDialogFragment.kt:447)
+        at com.owncloud.android.presentation.ui.sharing.fragments.PublicShareDialogFragment$observeCapabilities$1.invoke(PublicShareDialogFragment.kt:63)
+        at com.owncloud.android.domain.utils.Event$EventObserver.onChanged(Event.kt:55)
+        at com.owncloud.android.domain.utils.Event$EventObserver.onChanged(Event.kt:52)
+        at androidx.lifecycle.LiveData.considerNotify(LiveData.java:131)
+        at androidx.lifecycle.LiveData.dispatchingValue(LiveData.java:149)
+        at androidx.lifecycle.LiveData.setValue(LiveData.java:307)
+        at androidx.lifecycle.MutableLiveData.setValue(MutableLiveData.java:50)
+        at androidx.lifecycle.LiveData$1.run(LiveData.java:91)
+        at android.os.Handler.handleCallback(Handler.java:883)
+        at android.os.Handler.dispatchMessage(Handler.java:100)
+        at android.os.Looper.loop(Looper.java:214)
+        at android.app.ActivityThread.main(ActivityThread.java:7356)
+        at java.lang.reflect.Method.invoke(Native Method)
+        at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:492)
+        at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:930)
+```
+
+",2020/5/20 16:11,0.8949,gp:AOqpTOG_LpJWf2tmV19AHkeplwvcEHI8DeowD9JiyM8ytGZbQPPt_ZV669Ku-ADRGP8Pqn4qkd-3zZ57oAppW6w,"Want to love this, but the login loop happens almost immediately and can't be fixed. It's a shame that this app is so powerful and so full of features, but then becomes rendered absolutely worthless and unusable by such a bug.",2018/3/11 23:51,,,,,,
+17741346, Android client forgets login data,"I'm using the actual client on Android 2.3. The client forgets the login data (server, username and password) after each reboot of the phone. It seems that this happens only if the client is moved to the sd card. It doesn't occur when the app is stored in the phone memory. Any other people with this problem?
+",2013/8/7 11:01,0.9012,gp:AOqpTOEvd_i3AwZIRqWMp_DTfQ9l74MVCo-gu20E1XgbsVvmmEKuiPkn038asqXhnNAZzgcNnpEoxlgqxQUA8G0,"App connects successfully, after entering username and password in the second step of the login wizard it prompts ""Could not find host"".",2018/2/18 3:43,,,,,,
+30979903,Fixing builds in Travis - last version of android-sdk-installer is failing when updating the SDK; older version is working,"@DeepDiver1975 
+",2014/4/7 12:31,0.8927,gp:AOqpTOGdHU2aaRBgHPb4jykfByaBoE0PwpLkxGPK_37gs9TUYAtI2ALsxqryk1Jw-1bPpd4-o8NVIlqyVtjr1sA,Last update forced me to emergency upgrade my server. I don't know if older app version is now compatible with my server (other users). Fix this asap please.,2018/2/10 11:29,,,,,,
+546473014,[BUG] App crashes when trying to connect to server secured with self signed certificate,"Not sure if this app is supported anymore. I can probably put up a PR for this after digging into it. Creating the ticket anyway.
+
+### Actual behaviour
+App crashes when trying to connect to server secured with self signed certificate
+
+### Expected behaviour
+App should not crash
+ 
+### Steps to reproduce
+1. Have a server secured with self-signed certificate
+2. Open the app and try to connect to it
+
+### Environment data
+Android version: 9
+
+Device model: OnePlus 5T
+
+Stock or customized system: stock
+
+ownCloud app version: 2.14.1
+
+ownCloud server version: ownCloud 10.0.10 (stable) 
+
+### Logs
+
+``` java
+E/AndroidRuntime: FATAL EXCEPTION: main
+    Process: com.owncloud.android.debug, PID: 15785
+    java.lang.IllegalArgumentException: The host activity must implement com.owncloud.android.ui.dialog.SslUntrustedCertDialog.OnSslUntrustedCertListener
+        at com.owncloud.android.ui.dialog.SslUntrustedCertDialog.onAttach(SslUntrustedCertDialog.java:116)
+```
+
+### PRs:
+- App: https://github.com/owncloud/android/pull/2795",2020/1/7 19:46,0.8917,gp:AOqpTOHiVMxiRz-RVeeU2v4N-LqQOZsAiQOHRnHA_U-ldI1-gobugAwUpZ-8nN4EjI1snu77gHhDhsy7JtToluY,The app has a major problem: it will not allow to accept self-signed certificates. The dialog keeps re-appearing.,2018/1/30 11:31,,,,,,
+101221408,Android App takes painfully too long to show thumbnails when folder opened for the first time ,"The thumbnails are seen in the web on the same account.
+
+Can I give more information?
+",2015/8/16 0:14,0.9003,gp:AOqpTOFWd23w7m37xqGCEn1irRxCn7HwWz2jP1ggsy86csSZktUSWFzoB6NPEkP1SbCxcdPrkS_SvMV5_e6Qv8Q,Does not auto uploaded photos which is the whole point and does not show thumbnails of what is on server without download or leaving the app open for ages before it forgets it all anyway. Prefer Amazon prime photos.,2018/1/12 5:50,,,,,,
+19350747,If ssl is enabled and i download a big file the server gets busy to 100%,"I' running the owncloud app version 1.4.4 on a 4.3 android phone.  If i have enable ssl via the webinterface and download a file up to 97MB, the server gets busy up to 100%. The only thing what i can do, is reset the server, no input are possible. Smaler files are no problems if ssl is enabled. If it is disabled i can also download bigger files without problems. 
+Owncloud server is 5.0.10
+
+Is this a problem of the ssl certificate or is this a problem of android 4.3 or a problem of the owncloud app?
+",2013/9/11 22:20,0.9232,gp:AOqpTOHnNTnxQjZWaRhQd7SsjWIdXZTL9fQ2Q-Q9jYrDPLz2Vds4MNlVcnmgZHXQggZlcYC39QPpgauNpoTQ7sg,"Too hard for my server, so I can't access dan backup my file instantly",2017/12/6 15:07,,,,,,
+28078135,Upload of a single file fails,"When I want to upload a single photo from a gallery, the app tries to do so first but fails everytime.
+
+A warning appears ""Upload of IMG_xxx.jpg could not be completed."" - what does this mean?
+
+There is no information in the log files. Any clues?
+",2014/2/21 22:27,0.9123,gp:AOqpTOGtejg4B3SSDBvfZqBuGZZZy2y80Hn7uedS5-FlV56Q-Y5SAWZmASjqKT3cQH-X5tE6ZJykY5aXTnLdoFs,Again again again auto upload does not work not only that it won't even let me open the auto upload section at all without crashing,2017/11/27 1:10,,,,,,
+522599041,[BUG]The photos/videos auto-synced to unexpected account and more chaos,"I have three user accounts which added into the app and located at left panel. but there are some issues of account chaos as following:
+
+1. **Chaos in account switching**, almost of times all of contents combined with the account wasn't working properly in right file list view;
+2. **The photos/videos auto-synced to unexpected account**. Since there is no account where the photo/video is mapped in the Settings, the unexpected account is automatically synchronized after the photo is completed. this is also a special case of account confusion.",2019/11/14 3:20,0.9088,gp:AOqpTOH8HOjhteCuoyeDQ5SFZkY816PfObJmcE0AgUKcHi6i_nJUKgwXVecu6iNAx-A1sJiImJoLed57KyHuaX8,App has a bug and is constantly trying to upload photos that were removed from gallery.  It's sucking up all my data and battery life.,2017/11/5 19:13,,,,,,
+56542144,Photo/Video Upload Name,"I was helpfull, when I can change the upload name for photos and videos.
+
+For Example: 
+
+Select Language Format for Upload:
+a) Select Language ""English, German, .....""
+
+Select Name for Upload:
+1) ""JJJJ-MM-DD HH.MM.SS"" -> ""2015-01-04 16.25.01""
+2) ""DD. MMM JJJJ NNN"" -> ""04. JÃ¤nner 2015 001"" .... NNN menas Number
+3) ""'My own Text' JJ-MM-DD HH.MM"" -> ""My own Text 15-01""
+4) ""JJJJ-MM-DD"" -> ""2015-01-04""
+and so on
+
+For a double File Problem
+File 1 ""JJJJ-MM-DD"" -> ""2015-01-04 (001)""
+File 2 ""JJJJ-MM-DD"" -> ""2015-01-04 (002)""
+
+I hope you understand what I mean.
+",2015/2/4 15:33,0.907,gp:AOqpTOEQXiGfhZpBEHWzkpGZrmAhyJ1uoEd2f79IJ6c7BkaGSWmPYVTwHpKn60t7YEPBAw5MSV9m6eUyffoS9ec,"As others already said, the latest update breaks auto photo upload.",2017/11/1 8:10,,,,,,
+14527040,Auto-restart failed upload from InstantUpload,"Sometimes it happens, that instant uploads are not uploaded due to connection resets or some other errors like connecting to a wifi hot-spot that needs authentication in html client after you connect and so on.
+
+I would like to see the client to automatically retry failed uploads for InstantUpload periodically until all images are synced...
+
+I have a lot of images on my phone which were not uploaded to owncloud but should have been...
+",2013/5/20 16:17,0.9238,gp:AOqpTOHauIbvIidV7RwGCbenjjAMDLzvKYGliKglijVQge5ZYyoadxgql5hS_TaEuzG2_p2VcQh15MtBL_qkmxc,"Auto upload worked fine until update, now it's useless for me",2017/10/27 9:14,,,,,,
+14580559,Instant upload sometimes creates corrupt files with 1.4.0 client and 5.0.6 server,"I did take 5 photos, the first 3 are uploaded incomplete on the server, the last 2 pictures are ok.
+
+Here the correct files:
+21.05.2013 13:18 3'185'208 DSC_0438.jpg
+21.05.2013 13:18 3'359'122 DSC_0439.jpg
+21.05.2013 13:18 2'039'503 DSC_0440.jpg
+21.05.2013 13:19 2'142'841 DSC_0441.jpg
+21.05.2013 13:19 2'090'055 DSC_0442.jpg
+
+Here the files uploaded via instant upload from android:
+21.05.2013 13:23 113'208 DSC_0438.jpg
+21.05.2013 13:24 1'311'122 DSC_0439.jpg
+21.05.2013 13:25 1'015'503 DSC_0440.jpg
+21.05.2013 13:25 2'142'841 DSC_0441.jpg
+21.05.2013 13:26 2'090'055 DSC_0442.jpg
+
+What's strange is the fact that this are not incomplete uploads, but realy corrupted (+incomplete?) uploads
+Attached the correct (left side) header of DSC_0439.jpg and the corrupt (right side) upload of it
+
+![lister - c__x_upload_owncloud_dsc_0438 jpg _2013-05-21_15-15-32](https://f.cloud.github.com/assets/1441009/543526/f9f40b46-c23c-11e2-91a0-f60b16a29997.jpg)
+
+When I comprae the file byte per byte, then I see that the corrupt upload of DSC_0438 starts with the bytes which are shown at offset 0x2EE000 in the correct file.
+In file DSC_0439 they start at 0x1F4000
+In file DSC_0440 they start at 0xFA000
+
+![upload2](https://f.cloud.github.com/assets/1441009/543528/001b10be-c23d-11e2-99e7-3dece99abb20.jpg)
+
+Not sure if it's related to issues #42 or/and #91 
+",2013/5/21 17:37,0.9101,gp:AOqpTOH_GbGIQTI6SVjw1OVA5FQNt-niLypLEFDhj1OCRyW2TnxNH48L8x6ULaXM5PkhThSDRTJ3NLfGc6PUaNw,"It has many bugs, you can not modify your hostname server.  The upload of photos also do not work automatically,  only manual.",2017/10/26 19:56,,,,,,
+16469687,Let user choose what folder in the remote server should be taken as root for synchronization,"Please add the ability to choose which subfolder inside the owncloud root directory should be synced (as in the PC client). I have several subfolders, some are external storages, and I don't want all of them synced to my mobile device.
+",2013/7/8 13:01,0.92,gp:AOqpTOHD1gQf5-G_z2gRprE0a-o-9BwjfsWsJgzAqXZHqWAjI-TL1CHLN2LD8JgMe6IyEf-21fwC0v8EMZrfuWI,"The app should really have an easy method to log out from a server, and to pause all synchronization. IMHO, logging could be better, too.",2017/9/9 1:55,,,,,,
+41928070,Added capability to move files (and folders),,2014/9/4 12:07,0.8955,gp:AOqpTOGd2Lt3YK-kCTfLkUTJlhRnpSruIB03vevqzRNMRGL6JzaPcBRQMDLE74HsxOLXZTjdyjhNmeHQIhZRmnc,"Please introduce a setting feature, so it is possible to move files to an external storage.",2017/8/21 19:52,,,,,,
+10306041,Feature request: Please enable contacts and calendar sync in Owncloud Android app,"Hi,
+
+I think many people who wish their owncloud Android app be able to sync contacts (with caldav) and calendar (with carddav) with their ownlcoud instance without having to pay for apps such as:
+
+for contacts:
+
+```
+Caldav-sync which costs 2,55 euro
+or Acal Caldav which costs 1,49 euro
+or Andal, whose unlock key costs 2,76 euro
+```
+
+for calendar events:
+
+```
+Cardav-sync beta which costs 1,89 euro
+```
+
+I have searched github for a silimar request but couldn't find it. I hope this is not a double!
+
+Thanks in advance!!!
+",2013/1/25 10:17,0.9166,gp:AOqpTOH4W2cdBzgup1F_-jz9IODKJIPacmqWoK6WSxuHvLjlaySPtCZ3ZnjPOOv193nKYFnvCbH9NNgqzqgX0ok,Works well with the new next cloud version. Wish it had the calendar and contact sync option built in,2017/7/30 23:19,,,,,,
+8145532,ownCloud logo shown in file detail view,"When I click on a file there__ a bunch of details about that file, and also the ownCloud logo. That shouldn__ be there.
+",2012/11/6 17:09,0.9058,gp:AOqpTOEwwzwsfIKZpRIjlOtPojKO5JoVjDeN_s_jYNTwBuc2a0Lj9CvDGTCfcSW5j-X-WAhQWaJgEKGYlUddz_Q,Worked fine until the update a while ago. Now does not u0load most photos. I am going back to the 9ld owncloud app as it is at least still rel8aboe enough for business use.,2017/7/20 16:53,,,,,,
+31480276,Instant upload only when charging,"I would like if there is an option for the instant upload to only upload when the phone is charging. Similar to what e.g MEGA is doing (see photo)
+
+This saves battery when you don't have charger around. also stops it from syncing when connected to slow wifis at public places and coffee shops.
+
+![screenshot_2014-04-14-12-42-53](https://cloud.githubusercontent.com/assets/432460/2698045/5ffed370-c3f5-11e3-974c-02cc30ebac35.png)
+
+<!---
+@huboard:{""order"":5.15203857421875,""milestone_order"":465}
+-->
+
+_______________
+
+EDIT (July 2021):
+
+An interesting feature to include in the app, taking advantage of the current WorkManager implementation.
+
+Related #3315 
+
+ACs:
+
+- New check in Camera upload photos/videos called `Upload pictures/videos only when charging`
+- If it is checked, all new stuff will be enqueued till device is charging. Proper message to show in the uploads view (`Waiting for charging` or similar) dependingÂ¿?
+- If it is unchecked, nothing different will happen. Stuff will be uploaded depending other conditions but not this one
+- Pictures and videos will behave separately
+- It will be visible only if `Only wifi` is enabled. Otherwise, it will be hidden
+- If camera upload section is switched off, check becomes disabled (same as wifi only)
+
+(open to discussion)",2014/4/14 16:54,0.8908,gp:AOqpTOGKvve7D-B7ZDxKuj4OiJqr3EiC6Hv50XsbDVhfrXdA5W2SzGlf3VZwEFZCkEwx6PuTBXhSRIJ3QEM5qXw,"Auto sync, upload waiting indefinitely, though device charging and wifi connected.",2017/6/28 0:05,,,,,,
+26758738,"As an user I would like to open audio, video and image files in other applications from the OC app, even though they can be previewed into it. (BEFORE: How to add MP3 to a playlist without using the Android file manager?)","Not sure if this is the right place. Among many other folders I am syncing one with MP3s. When I click on one, I can play and hear it. But I cannot load it into the music player nor to a playlist.
+
+I want to avoid copying files from the OwnCloud directory to the music folder with the default Android FileManager. This goes against the idea of syncing.
+
+Any ideas?
+",2014/2/2 10:43,0.9082,gp:AOqpTOEpnNaA21elwmY_IXX8kYp9igu0gK78KSLrZokzY66db1zbyyt6K6NVJ62biOEMrJxQcuUmjOV8C3uiSEE,Integrating a simple Spreed Video Chat client would be brilliant!!  Not to mention streaming video playback like on the web version so the file won't need to be downloaded first.  Keep up the great work!!,2017/6/24 5:15,,,,,,
+11413907,Owncloud App with ICS and Jelly Bean 4.2.2 no longer uploads files or InstantUploads pictures correctly,"I believe the current version of the Android app 1.3.20 can not handle uploading files of any size using the owncloud app when running on Android 4.2.1 and 4.2.2.
+
+Tested on a fresh  Android 4.2.2 code base on a Samsung Galaxy Nexus with factory images ""yakju"" for Galaxy Nexus ""maguro"" (GSM/HSPA+)
+from   https://developers.google.com/android/nexus/images#yakjujdq39
+
+Uploading files, and the instantupload of pictures fails at different percentages.
+Even small textfiles fail during the upload.
+
+Looking into tail /var/log/httpd/ssl_error_log on the owncloud server I see:
+
+[Tue Feb 26 13:46:20 2013] [error] [client 192.168.0.1] PHP Fatal error: Allowed memory size of 536870912 bytes exhausted (tried to allocate 523800 bytes) in /var/www/html/owncloud/lib/db.php on line 562
+
+adding more fysical RAM or changing the php max memory allocation
+sed -i 's/memory_limit = 500M/memory_limit = 768M/' /etc/php.ini
+does not seem to help.
+
+Our owncloud 4.5.6 or 4.5.7 used to work perfectly with the android client on phones with Android version 2.3.7
+
+Looking for confirmation that somebody can successfully upload files and pictures with Jelly Bean, android 4.2.2 versions.
+",2013/2/26 15:37,0.9348,gp:AOqpTOEfQHq2gKHKIbG6Js_Hm--2zAEREmI3g1c0GasOc22KJ4Z0qhmo4MByt0zlwOGICjLUTYwOH0JuxsyPZ_4,"Like the auto upload feature a lot. Would love if I could upload existing pictures, and auto upload folders that have files other than pictures!",2017/5/3 15:52,,,,,,
+49700335,"[fileCount] In the bottom of the file list, it should say number of files and then number of folders","### Steps to reproduce
+1. Access to a folder where there are 1 folder and 2 files
+2. In the bottom, it is shown _1 folder, 2 files_
+   3.
+### Expected behaviour
+
+In the bottom, it should be shown _2 files, 1 folder_.
+In the iOS app, it is said that.
+On the other hand, in android app folders are shown first and then files
+### Actual behaviour
+
+In the bottom, it is shown _1 folder, 2 files_
+### Device
+
+Android v.4.1
+
+Bug related with this pull request https://github.com/owncloud/android/pull/662
+",2014/11/21 14:13,0.8937,gp:AOqpTOHoFRk8G3a8esATZY56AZDhEbQLJu5uGSDxzwu26RunBLNQ8e1pAGQY3AUskhmje3KMMBPJZbiF2QZ36as,"Seems to bit buggy - it doesn't seem to load directory sizes properly (shows 0b when a folder has files in it), and doesn't load the contents of a few folders (says they're empty even though they sync just fine on desktop).",2017/4/24 6:52,,,,,,
+11067071,Android Client Does not auto upload ScreenShots taken,"Camera upload works well. But Screenshots taken by Volume Down + Power buttons not working.
+",2013/2/16 13:17,0.9137,gp:AOqpTOGp0zLBqVO90Ql8Cd3A1x-IHryUTjFc-0C2L4FAtvBugH5tJdrH5yfl1ZvZtb6YmTiS2CcMhOH1UcHobKg,Instant upload only works some of the time on android 7. Also needs ability to upload pics and vids to different folders during instant upload.,2017/4/22 5:21,,,,,,
+43317393,"Add ""select all"" option to photo (or other) upload screen","Not sure if this has been added or requested, but the current version from the play store does not have the feature.
+
+Please add a select all option.
+
+Thanks
+",2014/9/20 19:15,0.9117,gp:AOqpTOEFm1L8TeRHt38naEow5-CyKe6wkj6qn7884NfNBJNa02peEYTH71Gg_Sp_O8W18G8Q5oyZQRJ4PG-sRrs,"Good app overall but auto upload still doesn't work. Sony Xperia Z5 on Android 7. Even with auto upload turned on, settings and folders selected, nothing happens when I take a photo. Keep trying :-)",2017/3/16 7:36,,,,,,
+1032380646,[MDM] Integrate Android Enterprise in the app,"[EPIC] -> https://github.com/owncloud/android/issues/3398
+[SPIKE] -> https://github.com/owncloud/android/issues/3399
+
+The very first step to be able to manage the app via MDM is to introduce Android Enterprise in the app.
+In this video playlist they show how to begin with Android Enterprise: https://www.youtube.com/playlist?list=PLWz5rJ2EKKc-nnQcMIVqAM9_CNmbGu12O
+Guide about managed configurations in Android documentation: https://developer.android.com/work/managed-configurations
+
+In our case, it'll be necessary to manage in some way the code that will have to be executed ONLY in the branded apps which use MDM. We discussed 2 different approaches:
+- Create a flag variable in `setup.xml` to indicate whether that instance of the app is going to be managed via MDM
+- Create a new product flavor so that this code is only executed if the app is built for that variant
+
+For the moment, we are taking the second approach, but more opinions and suggestions are welcome.
+
+### TASKS
+
+- [x] Research
+- [x] Create branch feature/mdm
+- [x] Development tasks
+  - [x] Create new product flavors ""mdmDebug"" and ""mdmRelease""
+  - [x] Include the `APP_RESTRICTIONS` meta-data node in the Android manifest 
+  - [x] Create a new `managed_configurations.xml` resource file with a `restriction` node for test.
+  - [x] Instantiate a `RestrictionsManager` and retrieve the restriction set previously **on app launch**
+  - [x] Use the restriction value to do whatever it implies
+  - [x] Test it with Test DPC
+- [x] Code review and apply changes requested
+- [x] Design test plan
+- [x] QA
+- [ ] Merge branch feature/mdm into master
+- [ ] Adapt BitRise workflow for tests
+
+### CHANGES IN BITRISE WORKFLOWS
+Since we introduced new flavors in the ""owncloudApp"" module in this issue, it is necessary to adapt workflows in BitRise so that they continue working after merging this into master. The changes performed are summarised in the next points:
+- The old workflows ""primary"" (UI and unit tests) are now ""**new_arch**"". As new architecture is being developed in a separate branch, it will be necessary to keep these workflows until a rebase against master is done.
+- The new ""**primary**"" workflow is a copy of the old ""primary"", but with some adaptations:
+  - In the UI tests workflow, now the apk is assembled for the ""originalDebug"" flavor
+  - In the unit tests workflow, now the unit tests in the ""owncloudApp"" module are executed for the ""originalDebug"" flavor, and the ""owncloudApp"" module is assembled for the ""originalDebug"" flavor
+- Also, the trigger pattern for the workflows has been changed so that the ""**new_arch**"" workflows are triggered only in branches starting by `new_arch/...`, and ""**primary**"" workflows are triggered in the rest of branches ([here](https://discuss.bitrise.io/t/exclude-one-branch-from-workflow-trigger-pattern/1244) is how to do this). This will be changed once the branch for new architecture rebases against master.
+
+### IMPORTANT POINTS
+- For users to be able to use ownCloud app and all its features, they should have some apps installed in the work profile of their devices that are not by default, so that some intents that are launched can be handled by a suitable app (otherwise ownCloud app crashes). This may be responsibility of MDM console administrators (they can usually distribute these apps via the MDM console). The needed apps are:
+  - A browser
+  - An email client",2021/10/21 11:30,0.9378,gp:AOqpTOGcsP2IXIMtwgW-sApUevtvjJ2oW_hbiBZNGnW1Bw8MeCGevcFAh0qqXaAXRAeFGJsvDXHg5bmlAgWNDPw,The features in the Android app are inferior to those in the iOS app.,2017/3/11 4:55,,,,,,
+106146161,Integrate server address,"Hello,
+
+How would it be possible to integrate Server address already in application, so the client doesn't need to type address, he only needs to login?
+
+Thanks
+",2015/9/12 10:25,0.9482,gp:AOqpTOH4dgJaKTObC8l-FpzL2NQUgaFRzpWkEJbpc9W4vaOoEWK_tFVi5ntJDAEneN-k-fh224ii15B-h-RSoGM,Where i can find server address? This is not working. Uninstall.,2017/2/19 16:45,,,,,,
+51788141,Upload fails in android v.5.0,"### Steps to reproduce
+1. Select to upload a file
+2. Select from another apps
+3. Select gallery
+4. Upload more than one file at the same time, but the uploads fail
+### Expected behaviour
+
+Files are uploaded
+### Actual behaviour
+
+Files are not uploaded
+### Device
+
+ It happens using nexus 9 android 5.0
+ It works using nexus 5 android 5.0
+ It works fine in android 4.4
+### Logs
+
+12-12 10:54:00.983: E/FileDisplayActivity(12695): Initializing Fragments in onAccountChanged..
+12-12 10:54:00.994: D/footer(12695): 1418378040994
+12-12 10:54:01.008: D/footer(12695): 1418378041008
+12-12 10:54:01.014: D/SimpleFactoryManager(12695): getClientFor(OwnCloudAccount ... : 
+12-12 10:54:01.016: D/OwnCloudClient #161(12695): Creating OwnCloudClient
+12-12 10:54:01.020: D/OwnCloudClient(12695): Proxy settings: 10.40.10.254:3128
+12-12 10:54:01.022: D/SimpleFactoryManager(12695):     new client {puri@va-vmowncloud:8060, 945271653}
+12-12 10:54:01.023: D/SynchronizeFolderOperation(12695): Checking changes in puri@va-vmowncloud:8060/qwerouyt/qarf/Ã±Ã±Ã±Ã±Ã±/
+12-12 10:54:01.027: D/OwnCloudClient #161(12695): REQUEST PROPFIND /remote.php/webdav/qwerouyt/qarf/%C3%B1%C3%B1%C3%B1%C3%B1%C3%B1/
+12-12 10:54:01.029: W/HttpMethodDirector(12695): Required proxy credentials not available for BASIC <any realm>@10.40.10.254:3128
+12-12 10:54:01.029: W/HttpMethodDirector(12695): Preemptive authentication requested but no default proxy credentials available
+12-12 10:54:01.060: D/cache_test_DISK_(12695): image read from disk 1534811605
+12-12 10:54:01.068: D/cache_test_DISK_(12695): image read from disk -1105815458
+12-12 10:54:01.078: D/SimpleFactoryManager(12695): getClientFor(OwnCloudAccount ... : 
+12-12 10:54:01.081: D/OwnCloudClient #162(12695): Creating OwnCloudClient
+12-12 10:54:01.087: E/FileDisplayActivity(12695): onResume() start
+12-12 10:54:01.093: D/OwnCloudClient(12695): Proxy settings: 10.40.10.254:3128
+12-12 10:54:01.097: D/footer(12695): 1418378041097
+12-12 10:54:01.104: D/footer(12695): 1418378041104
+12-12 10:54:01.109: D/SimpleFactoryManager(12695):     new client {puri@va-vmowncloud:8060, 454973498}
+12-12 10:54:01.111: D/ThumbnailsCacheManager(12695): Server too old
+12-12 10:54:01.114: D/FileDisplayActivity(12695): onResume() end
+12-12 10:54:01.122: D/SimpleFactoryManager(12695): getClientFor(OwnCloudAccount ... : 
+12-12 10:54:01.127: D/cache_test_DISK_(12695): image read from disk 1534811605
+12-12 10:54:01.130: D/cache_test_DISK_(12695): image read from disk -1105815458
+12-12 10:54:01.145: D/OwnCloudClient #163(12695): Creating OwnCloudClient
+12-12 10:54:01.148: D/OwnCloudClient(12695): Proxy settings: 10.40.10.254:3128
+12-12 10:54:01.153: D/SimpleFactoryManager(12695):     new client {puri@va-vmowncloud:8060, 780779014}
+12-12 10:54:01.163: D/ThumbnailsCacheManager(12695): Server too old
+12-12 10:54:01.194: D/SimpleFactoryManager(12695): getClientFor(OwnCloudAccount ... : 
+12-12 10:54:01.198: D/SynchronizeFolderOperation(12695): Send broadcast com.owncloud.android.operations.SynchronizeFolderOperation.EVENT_SINGLE_FOLDER_CONTENTS_SYNCED
+12-12 10:54:01.211: D/OwnCloudClient #161(12695): REQUEST GET /ocs/v1.php/apps/files_sharing/api/v1/shares
+12-12 10:54:01.213: D/FileDisplayActivity(12695): Received broadcast com.owncloud.android.operations.SynchronizeFolderOperation.EVENT_SINGLE_FOLDER_CONTENTS_SYNCED
+12-12 10:54:01.223: W/HttpMethodDirector(12695): Required proxy credentials not available for BASIC <any realm>@10.40.10.254:3128
+12-12 10:54:01.226: W/HttpMethodDirector(12695): Preemptive authentication requested but no default proxy credentials available
+12-12 10:54:01.245: D/footer(12695): 1418378041245
+12-12 10:54:01.260: D/footer(12695): 1418378041260
+12-12 10:54:01.265: D/FileDisplayActivity(12695): Setting progress visibility to true
+12-12 10:54:01.278: D/cache_test_DISK_(12695): image read from disk 1534811605
+12-12 10:54:01.290: D/cache_test_DISK_(12695): image read from disk -1105815458
+12-12 10:54:01.282: D/OwnCloudClient #164(12695): Creating OwnCloudClient
+12-12 10:54:01.308: D/OwnCloudClient(12695): Proxy settings: 10.40.10.254:3128
+12-12 10:54:01.311: D/SimpleFactoryManager(12695):     new client {puri@va-vmowncloud:8060, 981904212}
+12-12 10:54:01.315: D/ThumbnailsCacheManager(12695): Server too old
+12-12 10:54:01.321: D/SimpleFactoryManager(12695): getClientFor(OwnCloudAccount ... : 
+12-12 10:54:01.325: D/OwnCloudClient #165(12695): Creating OwnCloudClient
+12-12 10:54:01.329: D/OwnCloudClient(12695): Proxy settings: 10.40.10.254:3128
+12-12 10:54:01.331: D/SimpleFactoryManager(12695):     new client {puri@va-vmowncloud:8060, 176339709}
+12-12 10:54:01.335: D/ThumbnailsCacheManager(12695): Server too old
+12-12 10:54:01.342: D/SimpleFactoryManager(12695): getClientFor(OwnCloudAccount ... : 
+12-12 10:54:01.345: D/OwnCloudClient #166(12695): Creating OwnCloudClient
+12-12 10:54:01.348: D/OwnCloudClient(12695): Proxy settings: 10.40.10.254:3128
+12-12 10:54:01.351: D/SimpleFactoryManager(12695):     new client {puri@va-vmowncloud:8060, 726721522}
+12-12 10:54:01.355: D/ThumbnailsCacheManager(12695): Server too old
+12-12 10:54:01.364: W/HttpMethodBase(12695): Going to buffer response body of large or unknown size. Using getResponseBodyAsStream instead is recommended.
+12-12 10:54:01.365: D/GetRemoteSharesForFileOperation(12695): Got 0 shares
+12-12 10:54:01.397: D/FileDataStorageManager(12695): Sending 5 operations to FileContentProvider
+12-12 10:54:01.406: D/FileContentProvider(12695): applying batch in provider com.owncloud.android.providers.FileContentProvider@dc0d4f7 (temporary: false)
+12-12 10:54:01.425: D/FileContentProvider(12695): applied batch in provider com.owncloud.android.providers.FileContentProvider@dc0d4f7
+12-12 10:54:01.431: D/SynchronizeFolderOperation(12695): Send broadcast com.owncloud.android.operations.SynchronizeFolderOperation.EVENT_SINGLE_FOLDER_SHARES_SYNCED
+12-12 10:54:01.443: D/FileDisplayActivity(12695): Received broadcast com.owncloud.android.operations.SynchronizeFolderOperation.EVENT_SINGLE_FOLDER_SHARES_SYNCED
+12-12 10:54:01.472: D/footer(12695): 1418378041472
+12-12 10:54:01.480: D/footer(12695): 1418378041480
+12-12 10:54:01.484: D/SimpleFactoryManager(12695): getClientFor(OwnCloudAccount ... : 
+12-12 10:54:01.485: D/OwnCloudClient #167(12695): Creating OwnCloudClient
+12-12 10:54:01.487: D/OwnCloudClient(12695): Proxy settings: 10.40.10.254:3128
+12-12 10:54:01.489: D/SimpleFactoryManager(12695):     new client {puri@va-vmowncloud:8060, 405339953}
+12-12 10:54:01.494: D/OwnCloudClient #167(12695): REQUEST HEAD /remote.php/webdav/qwerouyt/qarf/%C3%B1%C3%B1%C3%B1%C3%B1%C3%B1/
+12-12 10:54:01.504: W/HttpMethodDirector(12695): Required proxy credentials not available for BASIC <any realm>@10.40.10.254:3128
+12-12 10:54:01.504: W/HttpMethodDirector(12695): Preemptive authentication requested but no default proxy credentials available
+12-12 10:54:01.596: D/ExistenceCheckRemoteOperation(12695): Existence check for http://va-vmowncloud:8060/remote.php/webdav/qwerouyt/qarf/%C3%B1%C3%B1%C3%B1%C3%B1%C3%B1/ targeting for  existence finished with HTTP status 200
+12-12 10:54:01.602: D/OwnCloudClient #167(12695): REQUEST HEAD /remote.php/webdav/qwerouyt/qarf/%C3%B1%C3%B1%C3%B1%C3%B1%C3%B1/1bH79ljToOFQwzejwsl2vrF_NXEjhcg1ZHmIHgsCwGc%3Ds0-d
+12-12 10:54:01.603: W/HttpMethodDirector(12695): Required proxy credentials not available for BASIC <any realm>@10.40.10.254:3128
+12-12 10:54:01.604: W/HttpMethodDirector(12695): Preemptive authentication requested but no default proxy credentials available
+12-12 10:54:01.625: D/FileDisplayActivity(12695): Setting progress visibility to false
+12-12 10:54:01.640: D/cache_test_DISK_(12695): image read from disk 1534811605
+12-12 10:54:01.645: D/cache_test_DISK_(12695): image read from disk -1105815458
+12-12 10:54:01.663: D/SimpleFactoryManager(12695): getClientFor(OwnCloudAccount ... : 
+12-12 10:54:01.667: D/OwnCloudClient #168(12695): Creating OwnCloudClient
+12-12 10:54:01.672: D/OwnCloudClient(12695): Proxy settings: 10.40.10.254:3128
+12-12 10:54:01.675: D/SimpleFactoryManager(12695):     new client {puri@va-vmowncloud:8060, 404473366}
+12-12 10:54:01.677: D/ThumbnailsCacheManager(12695): Server too old
+12-12 10:54:01.680: D/SimpleFactoryManager(12695): getClientFor(OwnCloudAccount ... : 
+12-12 10:54:01.680: D/OwnCloudClient #169(12695): Creating OwnCloudClient
+12-12 10:54:01.681: D/OwnCloudClient(12695): Proxy settings: 10.40.10.254:3128
+12-12 10:54:01.682: D/SimpleFactoryManager(12695):     new client {puri@va-vmowncloud:8060, 87178135}
+12-12 10:54:01.683: D/ThumbnailsCacheManager(12695): Server too old
+12-12 10:54:01.730: D/ExistenceCheckRemoteOperation(12695): Existence check for http://va-vmowncloud:8060/remote.php/webdav/qwerouyt/qarf/%C3%B1%C3%B1%C3%B1%C3%B1%C3%B1/1bH79ljToOFQwzejwsl2vrF_NXEjhcg1ZHmIHgsCwGc%3Ds0-d targeting for  existence finished with HTTP status 404(FAIL)
+12-12 10:54:01.732: E/UploadFileOperation(12695): Upload of https://lh6.googleusercontent.com/1bH79ljToOFQwzejwsl2vrF_NXEjhcg1ZHmIHgsCwGc=s0-d to /qwerouyt/qarf/Ã±Ã±Ã±Ã±Ã±/1bH79ljToOFQwzejwsl2vrF_NXEjhcg1ZHmIHgsCwGc=s0-d: Operation finished with HTTP status code -1 (fail)
+12-12 10:54:01.733: D/FileUploader(12695): NotifyUploadResult with resultCode: LOCAL_STORAGE_NOT_COPIED
+12-12 10:54:01.745: D/footer(12695): 1418378041745
+12-12 10:54:01.750: D/footer(12695): 1418378041750
+12-12 10:54:01.757: D/cache_test_DISK_(12695): image read from disk 1534811605
+12-12 10:54:01.762: D/cache_test_DISK_(12695): image read from disk -1105815458
+12-12 10:54:01.778: D/SimpleFactoryManager(12695): getClientFor(OwnCloudAccount ... : 
+12-12 10:54:01.783: D/OwnCloudClient #170(12695): Creating OwnCloudClient
+12-12 10:54:01.787: D/OwnCloudClient(12695): Proxy settings: 10.40.10.254:3128
+12-12 10:54:01.790: D/SimpleFactoryManager(12695):     new client {puri@va-vmowncloud:8060, 268840354}
+12-12 10:54:01.793: D/ThumbnailsCacheManager(12695): Server too old
+12-12 10:54:01.797: D/SimpleFactoryManager(12695): getClientFor(OwnCloudAccount ... : 
+12-12 10:54:01.800: D/OwnCloudClient #171(12695): Creating OwnCloudClient
+12-12 10:54:01.800: D/OwnCloudClient(12695): Proxy settings: 10.40.10.254:3128
+12-12 10:54:01.802: D/SimpleFactoryManager(12695):     new client {puri@va-vmowncloud:8060, 567605811}
+12-12 10:54:01.804: D/ThumbnailsCacheManager(12695): Server too old
+",2014/12/12 9:55,0.8989,gp:AOqpTOFp9igpuGSwzEcY-WUIMFPxddMBRIkpkLHQli_AjUgsIqZRp0tBv7X0Hhr7siGcbWQuajmSMUqn4zLgFkM,"Autoupload not working, android 7, otherwise all seems good. Happy with app and will increase stars to 5 when auto upload is working.",2017/2/18 10:41,,,,,,
+8077243,[Newbie] Help me to start developing ownCloud Android !!!,"Hi 
+I want to start developing ownCloud for Android by adding some new features . Can anyone help me to import ownCloud for Android into my Eclipse ? I've tried but it always contain error when run the project 
+
+Thanks for your help !!! 
+",2012/11/3 6:40,0.9079,gp:AOqpTOFRgtS6G2BYgZqA2uwPevNVyge2FMUhunXIzpDtubtmb1TYKCpv-YDxwGp5TsuOGiaZqNSXTx0AYKPhTJY,"Great app for what I need. Better than owncloud by far, also much better serverside progress. Also free.",2017/2/4 16:09,,,,,,
+7930968,Two-way file sync for specific folders or files.,"Currently I've been doing this with an app called ""Folder Sync"".
+
+<!---
+@huboard:{""milestone_order"":3.0,""order"":0.1875,""custom_state"":""""}
+-->
+",2012/10/29 10:14,0.92,gp:AOqpTOGFAAYHVgkFfFEfDv9FvH5KYy1UYPE9_2bK0PSCxrs7V4KLUDUxe803OzbAArG8Rw0Uf4jswjmO4lKWHMA,The ability to sync device folders - It would be nice to map a local folder to a NextCloud folder for synchronization.  A big nagging issue I have is that files upload one at a time...,2016/12/27 22:32,,,,,,
+111917716,Unable to login due to SSL,"Hi!
+
+I run OC 8.1.3 behind an nginx 1.8.0 proxy with php5-fpm and a self signed certificate.
+The certificate has been imported as a system cert in android for DavDroid.
+Everything including WebDAV and CalDAV runs find except for the OC android app:
+
+Problem: I cannot login due to an unrecognized error.
+
+Question: What could the reason be? Is it a bug in the OC app or has it something to do with my selfsigned certificate?
+I created it using 
+
+```
+openssl req -nodes -x509 -newkey rsa:4096 -keyout $1.pem -out $1.pem -days 730
+```
+
+Here's first the ADB log when I add the following HTTP header:
+
+```
+Strict-Transport-Security:max-age=31536000; includeSubdomains
+```
+
+```
+10-16 22:01:31.975 D/OperationsService(16094): Starting command with id 5
+10-16 22:01:31.976 D/SimpleFactoryManager(16094): getClientFor(OwnCloudAccount ... : 
+10-16 22:01:31.977 D/OwnCloudClient #4(16094): Creating OwnCloudClient
+10-16 22:01:31.981 V/SimpleFactoryManager(16094):     new client {@cloud.domain/owncloud, 305893395}
+10-16 22:01:32.021 I/ValidateNoPeople(  622): skipping global notification
+10-16 22:01:32.042 D/OwnCloudClient #4(16094): REQUEST GET /owncloud/status.php
+10-16 22:01:32.042 D/AdvancedSslSocketFactory(16094): Creating SSL Socket with remote cloud.domain:443, local null:0, params: org.apache.commons.httpclient.params.HttpConnectionParams@221f2fd2
+10-16 22:01:32.042 D/AdvancedSslSocketFactory(16094):  ... with connection timeout 5000 and socket timeout 5000
+10-16 22:01:32.072 I/ValidateNoPeople(  622): skipping global notification
+10-16 22:01:32.894 E/GetRemoteStatusOperation(16094): Connection check at https://cloud.domain/owncloud: HTTP violation
+10-16 22:01:32.894 E/GetRemoteStatusOperation(16094): org.apache.commons.httpclient.ProtocolException: Unable to parse header: ""; max-age=2592000; includeSubDomains
+10-16 22:01:32.894 E/GetRemoteStatusOperation(16094):   at org.apache.commons.httpclient.HttpParser.parseHeaders(HttpParser.java:202)
+10-16 22:01:32.894 E/GetRemoteStatusOperation(16094):   at org.apache.commons.httpclient.HttpMethodBase.readResponseHeaders(HttpMethodBase.java:1935)
+10-16 22:01:32.894 E/GetRemoteStatusOperation(16094):   at org.apache.commons.httpclient.HttpMethodBase.readResponse(HttpMethodBase.java:1737)
+10-16 22:01:32.894 E/GetRemoteStatusOperation(16094):   at org.apache.commons.httpclient.HttpMethodBase.execute(HttpMethodBase.java:1098)
+10-16 22:01:32.894 E/GetRemoteStatusOperation(16094):   at org.apache.commons.httpclient.HttpMethodDirector.executeWithRetry(HttpMethodDirector.java:398)
+10-16 22:01:32.894 E/GetRemoteStatusOperation(16094):   at org.apache.commons.httpclient.HttpMethodDirector.executeMethod(HttpMethodDirector.java:171)
+10-16 22:01:32.894 E/GetRemoteStatusOperation(16094):   at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:397)
+10-16 22:01:32.894 E/GetRemoteStatusOperation(16094):   at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:323)
+10-16 22:01:32.894 E/GetRemoteStatusOperation(16094):   at com.owncloud.android.lib.common.OwnCloudClient.executeMethod(OwnCloudClient.java:222)
+10-16 22:01:32.894 E/GetRemoteStatusOperation(16094):   at com.owncloud.android.lib.common.OwnCloudClient.executeMethod(OwnCloudClient.java:192)
+10-16 22:01:32.894 E/GetRemoteStatusOperation(16094):   at com.owncloud.android.lib.resources.status.GetRemoteStatusOperation.tryConnection(GetRemoteStatusOperation.java:89)
+10-16 22:01:32.894 E/GetRemoteStatusOperation(16094):   at com.owncloud.android.lib.resources.status.GetRemoteStatusOperation.run(GetRemoteStatusOperation.java:194)
+10-16 22:01:32.894 E/GetRemoteStatusOperation(16094):   at com.owncloud.android.lib.common.operations.RemoteOperation.execute(RemoteOperation.java:136)
+10-16 22:01:32.894 E/GetRemoteStatusOperation(16094):   at com.owncloud.android.operations.GetServerInfoOperation.run(GetServerInfoOperation.java:81)
+10-16 22:01:32.894 E/GetRemoteStatusOperation(16094):   at com.owncloud.android.lib.common.operations.RemoteOperation.execute(RemoteOperation.java:136)
+10-16 22:01:32.894 E/GetRemoteStatusOperation(16094):   at com.owncloud.android.services.OperationsService$ServiceHandler.nextOperation(OperationsService.java:478)
+10-16 22:01:32.894 E/GetRemoteStatusOperation(16094):   at com.owncloud.android.services.OperationsService$ServiceHandler.handleMessage(OperationsService.java:413)
+10-16 22:01:32.894 E/GetRemoteStatusOperation(16094):   at android.os.Handler.dispatchMessage(Handler.java:102)
+10-16 22:01:32.894 E/GetRemoteStatusOperation(16094):   at android.os.Looper.loop(Looper.java:135)
+10-16 22:01:32.894 E/GetRemoteStatusOperation(16094):   at android.os.HandlerThread.run(HandlerThread.java:61)
+```
+
+After removing the header there's another unrecognized error:
+
+```
+10-16 23:44:46.124 D/NetworkUtils(18097): Searching known-servers store at /data/data/com.owncloud.android/files/knownServers.bks
+10-16 23:44:46.157 D/OwnCloudClient #0(18097): Creating OwnCloudClient
+10-16 23:44:46.158 V/SimpleFactoryManager(18097):     new client {@cloud.domain.net/owncloud, 68049972}
+10-16 23:44:46.166 D/OwnCloudClient #0(18097): REQUEST GET /owncloud/status.php
+10-16 23:44:46.185 D/AdvancedSslSocketFactory(18097): Creating SSL Socket with remote cloud.domain.net:443, local null:0, params: org.apache.commons.httpclient.params.HttpConnectionParams@7b92f59
+10-16 23:44:46.185 D/AdvancedSslSocketFactory(18097):  ... with connection timeout 5000 and socket timeout 5000
+10-16 23:44:46.563 D/Sensors (  622): LightSensor readEvents x = 337.000000, raw = 337
+10-16 23:44:46.807 E/GetRemoteStatusOperation(18097): Connection check at https://cloud.domain.net/owncloud: SSL recoverable exception
+10-16 23:44:46.807 E/GetRemoteStatusOperation(18097): com.owncloud.android.lib.common.network.CertificateCombinedException
+10-16 23:44:46.807 E/GetRemoteStatusOperation(18097):   at com.owncloud.android.lib.common.network.AdvancedX509TrustManager.checkServerTrusted(AdvancedX509TrustManager.java:105)
+10-16 23:44:46.807 E/GetRemoteStatusOperation(18097):   at com.android.org.conscrypt.Platform.checkServerTrusted(Platform.java:116)
+10-16 23:44:46.807 E/GetRemoteStatusOperation(18097):   at com.android.org.conscrypt.OpenSSLSocketImpl.verifyCertificateChain(OpenSSLSocketImpl.java:550)
+10-16 23:44:46.807 E/GetRemoteStatusOperation(18097):   at com.android.org.conscrypt.NativeCrypto.SSL_do_handshake(Native Method)
+10-16 23:44:46.807 E/GetRemoteStatusOperation(18097):   at com.android.org.conscrypt.OpenSSLSocketImpl.startHandshake(OpenSSLSocketImpl.java:318)
+10-16 23:44:46.807 E/GetRemoteStatusOperation(18097):   at com.owncloud.android.lib.common.network.AdvancedSslSocketFactory.verifyPeerIdentity(AdvancedSslSocketFactory.java:248)
+10-16 23:44:46.807 E/GetRemoteStatusOperation(18097):   at com.owncloud.android.lib.common.network.AdvancedSslSocketFactory.createSocket(AdvancedSslSocketFactory.java:185)
+10-16 23:44:46.807 E/GetRemoteStatusOperation(18097):   at org.apache.commons.httpclient.HttpConnection.open(HttpConnection.java:707)
+10-16 23:44:46.807 E/GetRemoteStatusOperation(18097):   at org.apache.commons.httpclient.MultiThreadedHttpConnectionManager$HttpConnectionAdapter.open(MultiThreadedHttpConnectionManager.java:1361)
+10-16 23:44:46.807 E/GetRemoteStatusOperation(18097):   at org.apache.commons.httpclient.HttpMethodDirector.executeWithRetry(HttpMethodDirector.java:387)
+10-16 23:44:46.807 E/GetRemoteStatusOperation(18097):   at org.apache.commons.httpclient.HttpMethodDirector.executeMethod(HttpMethodDirector.java:171)
+10-16 23:44:46.807 E/GetRemoteStatusOperation(18097):   at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:397)
+10-16 23:44:46.807 E/GetRemoteStatusOperation(18097):   at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:323)
+10-16 23:44:46.807 E/GetRemoteStatusOperation(18097):   at com.owncloud.android.lib.common.OwnCloudClient.executeMethod(OwnCloudClient.java:222)
+10-16 23:44:46.807 E/GetRemoteStatusOperation(18097):   at com.owncloud.android.lib.common.OwnCloudClient.executeMethod(OwnCloudClient.java:192)
+10-16 23:44:46.807 E/GetRemoteStatusOperation(18097):   at com.owncloud.android.lib.resources.status.GetRemoteStatusOperation.tryConnection(GetRemoteStatusOperation.java:89)
+10-16 23:44:46.807 E/GetRemoteStatusOperation(18097):   at com.owncloud.android.lib.resources.status.GetRemoteStatusOperation.run(GetRemoteStatusOperation.java:194)
+10-16 23:44:46.807 E/GetRemoteStatusOperation(18097):   at com.owncloud.android.lib.common.operations.RemoteOperation.execute(RemoteOperation.java:136)
+10-16 23:44:46.807 E/GetRemoteStatusOperation(18097):   at com.owncloud.android.operations.GetServerInfoOperation.run(GetServerInfoOperation.java:81)
+10-16 23:44:46.807 E/GetRemoteStatusOperation(18097):   at com.owncloud.android.lib.common.operations.RemoteOperation.execute(RemoteOperation.java:136)
+10-16 23:44:46.807 E/GetRemoteStatusOperation(18097):   at com.owncloud.android.services.OperationsService$ServiceHandler.nextOperation(OperationsService.java:478)
+10-16 23:44:46.807 E/GetRemoteStatusOperation(18097):   at com.owncloud.android.services.OperationsService$ServiceHandler.handleMessage(OperationsService.java:413)
+10-16 23:44:46.807 E/GetRemoteStatusOperation(18097):   at android.os.Handler.dispatchMessage(Handler.java:102)
+10-16 23:44:46.807 E/GetRemoteStatusOperation(18097):   at android.os.Looper.loop(Looper.java:135)
+10-16 23:44:46.807 E/GetRemoteStatusOperation(18097):   at android.os.HandlerThread.run(HandlerThread.java:61)
+10-16 23:44:46.812 D/FileActivity(18097): Received result of operation in FileActivity - common behaviour for all the FileActivities 
+```
+
+Kind Regards
+",2015/10/16 21:54,0.8903,gp:AOqpTOH9VP8ylMiXVDL3_BpZpNoyE62xY5RKi26MZE70XiHAdG7HKz50W3ngiDzLGfgSfyxn7NpSPeh9VnJXdps,"Set up nextcloud on my Freenas, allowed access through my sky router and I am unable to login?",2016/12/22 11:39,,,,,,
+51794486,Show 'cancel download' option in folder actions menu when folder is bein...,"...g downloaded
+",2014/12/12 11:05,0.9196,gp:AOqpTOEHLmJM7-EfGTaZo323nUypN2kK1Zf0KDTCdSOx19sFyMHvJ0nvVOyMb6A_knxNCMVIfHu8b9WJoAZHQ10,If I don't set the data folder it is still using the old nextcloud folder but the move to program folder option on auto upload doenst work in any case so it appears that functionality is broken now. So i guess until this is fixed this wont work on the new version of the app. Would it then be possible to let the user select a specifi folde to move to not just internal storage and sd card?,2016/12/14 23:21,,,,,,
+46306327,Music stops playing when upload notification appears,"UPDATE: Seems to be a general Android issue not necessarily due to Owncloud.
+
+I have problems with Owncloud on my Nexus 5. Whenever I listen to music and owncloud tries uploading a foto my music stops playing. I am not sure if it only happens when the upload fails or in general when uploading but it is really annoying!
+",2014/10/20 18:04,0.8986,gp:AOqpTOEL-gJmOqk2Sg_C4q-5ykknT7MOnJhbw6xlcRcDpFZpGBR8ftNQqBJZ93RPs3aqy3uTpl2hj44UDgCIadk,"Instant upload for videos doesn't work. It says ""waiting for device charging""  even when the option is not checked on settings.  Also thumbnail generation takes extremely long...",2016/10/27 1:03,,,,,,
+218903856,Cannot sync gradle project due to failed to resolve :touch-image-view:,"App gradle cannot sync and it is reporting error:
+`Failed to resolve: :touch-image-view:`
+
+I have got this error after I have changed package name in AndroidManifest.xml, from `com.owncloud.android` to `com.lazarvgd.android`.
+
+Please advice how to overcome this issue?
+Thanks 
+
+EDIT:
+
+I have found that android studio cannot find this class:
+`import com.ortiz.touch.ExtendedViewPager;` in `PreviewImageActivity.class`",2017/4/3 11:26,0.915,gp:AOqpTOGLZMMs4FoXKyLzzlMVGeTex3gTYvixEJabgAvX8_g46Jvpf6UcdttXZNGSc65DfY06MymsTvdtXuKgma0,"The picture upload Feature dont work on nexus 6p with nougat. But since developers have identified the bug and reported It on git, It is Clear that they are fast to respond and they really care. :)",2016/10/24 13:18,,,,,,
+10304887,Android client available via http://owncloud.org/support/android/ is crashing,"Not sure if this is the correct place to report this, hopefully it will reach the right people...
+
+I don't really know where to get the latest apk version of the owncloud client for android; I thought it was http://owncloud.org/support/android/ (at least that's the first hit on the search words ""owncloud android client""), but the one from there is crashing on my phone (Galaxy Nexus running 4.2.1) - at least it shows a ""App crashed"" message box every time when the app starts; after some waiting the app still shows up, but will keep on crashing every minute or so - that's unacceptable for me, and I have seen this behavior before, I'm pretty sure it was fixed in the meantime. When going to the page linked there (http://alefzero.eu/a/) I see ""Last modified: October 10 2012 23:20."", and it also still links to gitorious...
+
+That can't be the current app, can it? If it isn't please at least remove the reference from http://owncloud.org/support/android/ (or point it to wherever the new version is available!
+",2013/1/25 9:32,0.9186,gp:AOqpTOGq0pkhm_lMS-uaqVudGfmhdzggNX2CD9-5jujlXgLFaSmDWP_pzzP_AN7bUy5ZcLpHsbB-qzwmjQhI684,"Latest owncloud client broke instant uploads, NextCloud client seems to work for now.",2016/9/5 11:26,,,,,,
+12510116,Added feature: download all files button,"The new button allows downloading of all files within the current folder recursively which haven't been cached locally yet.
+",2013/3/27 12:47,0.8959,gp:AOqpTOEq3cYftQ5GaAPyJIsgSoiQ1iROfWTp0g4mcnceBycBJwp0AStgcRFBHE4xjZetMgIm7y4fYFXoYUdJJI4,it's a good basic app to access your files but needs to add support for more features like calendar and contacts.,2016/9/1 4:22,,,,,,
+485652766,Create new app in Bitrise to build the library when pushing commits or creating PRs ,It needs https://github.com/owncloud/android-library/issues/262,2019/8/27 8:07,0.8955,gp:AOqpTOHSJgcZav5sHn1mc1jDExO8gdSTHQBRu5XVQYACgt6AWfpeUiQ2RJw_9NlKgzOiSJ8LDr_51MNtlHttU7o,"Don't think the developer understands the concept of keeping folders in sync, avoid this app",2016/8/8 21:04,,,,,,
+450747948,[BUG] Crash when notifying upload result (reported in Google Play),"### Actual behaviour
+- Crash when notifying upload result
+
+### Expected behaviour
+- Notify upload result should work without any crash
+ 
+### Steps to reproduce
+Not defined yet, but it's most likely related to uploads in background. It needs an additional research. 
+
+### Environment data
+Android versions (% of total reports): 
+9 => 56.3%
+8.1 => 25.2%
+8.0 => 18.4%
+
+Device model: Nexus 5X
+
+Stock or customized system: Stock
+
+ownCloud app version: 2.10.1
+
+ownCloud server version: unknown
+
+### Logs
+#### ownCloud log (data/owncloud.log)
+```
+java.lang.NullPointerException: 
+  at com.owncloud.android.files.services.FileUploader.notifyUploadResult (FileUploader.java:1009)
+  at com.owncloud.android.files.services.FileUploader.uploadFile (FileUploader.java:928)
+  at com.owncloud.android.files.services.FileUploader$ServiceHandler.handleMessage (FileUploader.java:804)
+  at android.os.Handler.dispatchMessage (Handler.java:106)
+  at android.os.Looper.loop (Looper.java:164)
+  at android.os.HandlerThread.run (HandlerThread.java:65)
+```
+
+### PRs
+App: https://github.com/owncloud/android/pull/2583",2019/5/31 11:16,0.9092,gp:AOqpTOHodreEF9nmj_03c-KpbeUJJ4iZK2fC9pdn_ch2gFWRecHX6iftwmizShwlYSD5NpMVGM9fsJYnsb94pt8,"Good app, but instant upload reports failed because of connectivity issues (on wifi) .   Would report the issue but can not find your Bugzilla.  Keep up the great work.",2016/6/26 2:34,,,,,,
+13764962,already viewed photos loading again (caching),"When I swipe through photos, I oftentimes get a loading spinner for images which were previously displayed. These really should be cached _ once I viewed a photo, it should always be shown in an instant. Same issue on iOS https://github.com/owncloud/ios-issues/issues/66
+",2013/4/29 15:13,0.9071,gp:AOqpTOHtbuwAiwcfWIhqn__Kg-TdK9scekYe3_UFeiDzMHmizl_dSqVZRFODhqO6yiDgM2Bs74GOJSTde_gDhgo,"Needs Select All on Upload Dialog, Manually Selecting 3000 photos is not practical",2016/6/21 10:22,,,,,,
+34346300,android client crashes when listing lots of folders,"I have a folder with 380 folders and 4 files. When i try to enter that folder from the mobile app, it crashes after some time, while loading.
+
+system log at http://pastebin.com/a0AbCsuf, system info at http://pastebin.com/7ueBfLpm
+",2014/5/27 6:58,0.9061,gp:AOqpTOGmvAbV82tX-Z_yZIc1GnmTawBDNdAUwp2dnP4uWEEZ-7LOx3TjcvTOoXNOoRdfqXKgLYwYgymWKSBvU98,"Not a complaint, but this could benefit from new features such as being able to send email notification when sharing a file/folder with another nextcloud user, or having more flexibility in what files/folders to sync along with scheduling. I'm using the awesome foldersync right now, and building some of those features in here would make this app great.",2016/6/19 1:35,,,,,,
+7991407,Suggestion to close the bugtracker https://github.com/bartoszprzybylski/owncloud-android/issues,"I suggest to close the bugtracker on https://github.com/bartoszprzybylski/owncloud-android/issues for new issues and to monitor and bugtrack everything here on https://github.com/owncloud/android/issues .
+
+see https://github.com/bartoszprzybylski/owncloud-android/issues/42
+",2012/10/31 7:27,0.9073,gp:AOqpTOEcBeT0_Sb108WlTadJU95UsuEfVA81BC6uPHMJcBjGcX7LAzH46hC71605mkRdMJ6hE588MITUJmKUd8U,Great app. I use it with my Spreedbox. Thank you Nextclouders!,2016/6/18 7:52,,,,,,
