@@ -1,6 +1,5 @@
-## Privacy-Security
-- https://github.com/wireapp/wire-android/issues/3650
-- https://github.com/wireapp/wire-android/issues/3649
+## Privacy-Security (to realease)
+
 ## Web-Browser
 - https://github.com/mozilla-mobile/fenix/issues/23436
 - https://github.com/mozilla-mobile/fenix/issues/23667
