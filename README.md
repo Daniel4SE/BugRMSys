@@ -27,3 +27,6 @@ Here are some ideas to get you started:
 * Version of Owncloud:
 * GPU: Tesla V100 32GB
 * CPU: 40  Intel(R) Xeon(R) CPU E5-2698 v4 @ 2.20GHz
+
+## data availability
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7520604.svg)](https://doi.org/10.5281/zenodo.7520604)
